@@ -10,7 +10,7 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-const secretKey = 'your_secret_key'; // Замініть на ваш секретний ключ
+const secretKey = 'secret_key';
 
 const dbPath = path.join(__dirname, 'database.db');
 const db = new sqlite3.Database(dbPath, (err) => {
@@ -29,7 +29,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
   }
 });
 
-// === Створення таблиць, якщо їх немає ===
 db.run(`
   CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -77,10 +76,6 @@ db.run(`
   )
 `);
 
-/*
- * Варіант B: Перевіряємо, чи в таблиці snippets уже є поле likes.
- * Якщо ні — додаємо. Якщо так — пропускаємо.
- */
 db.all("PRAGMA table_info(snippets)", [], (err, columns) => {
   if (err) {
     console.error("Помилка PRAGMA:", err);
@@ -100,25 +95,17 @@ db.all("PRAGMA table_info(snippets)", [], (err, columns) => {
   }
 });
 
-// === authenticateToken ===
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
-  if (!token) {
-    return res.status(401).json({ error: 'Токен не надано' });
-  }
+  if (!token) return res.status(401).json({ error: 'Токен не надано' });
   jwt.verify(token, secretKey, (err, user) => {
-    if (err) {
-      return res.status(403).json({ error: 'Неправильний токен' });
-    }
-    req.user = user; 
+    if (err) return res.status(403).json({ error: 'Неправильний токен' });
+    req.user = user;
     next();
   });
 }
 
-// ======= Маршрути =======
-
-// *** Реєстрація ***
 app.post('/register', (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
@@ -148,7 +135,6 @@ app.post('/register', (req, res) => {
   stmt.finalize();
 });
 
-// *** Логін ***
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -173,7 +159,6 @@ app.post('/login', (req, res) => {
   });
 });
 
-// submit-result 
 app.post('/submit-result', authenticateToken, (req, res) => {
   const { userId, testName, score, timeTaken } = req.body;
   if (!userId || !testName || score === undefined || timeTaken === undefined) {
@@ -213,7 +198,6 @@ app.post('/submit-result', authenticateToken, (req, res) => {
   );
 });
 
-// user-results
 app.get('/user-results/:userId', authenticateToken, (req, res) => {
   const userId = req.params.userId;
   if (parseInt(userId) !== req.user.userId) {
@@ -225,7 +209,6 @@ app.get('/user-results/:userId', authenticateToken, (req, res) => {
   });
 });
 
-// user-info
 app.get('/user-info', authenticateToken, (req, res) => {
   const userId = req.user.userId;
   db.get('SELECT name, email, aboutMe, profilePhoto FROM users WHERE id = ?', [userId], (err, row) => {
@@ -240,7 +223,6 @@ app.get('/user-info', authenticateToken, (req, res) => {
   });
 });
 
-// update-profile (AboutMe + Фото)
 app.post('/update-profile', authenticateToken, upload.single('profilePhoto'), (req, res) => {
   const userId = req.user.userId;
   const aboutMe = req.body.aboutMe || '';
@@ -258,9 +240,6 @@ app.post('/update-profile', authenticateToken, upload.single('profilePhoto'), (r
   );
 });
 
-// --------------------- SNIPPETS ROUTES ---------------------
-
-// 1) Створити новий snippet
 app.post('/snippets', authenticateToken, (req, res) => {
   const { title, codeText, language } = req.body;
   const userId = req.user.userId;
@@ -280,7 +259,6 @@ app.post('/snippets', authenticateToken, (req, res) => {
   });
 });
 
-// 2) Отримати список snippet-ів (з підтримкою ?sort=likesDesc)
 app.get('/snippets', (req, res) => {
   const sort = req.query.sort;
   let sql = `
@@ -305,7 +283,6 @@ app.get('/snippets', (req, res) => {
   });
 });
 
-// 3) Оновити snippet
 app.put('/snippets/:id', authenticateToken, (req, res) => {
   const snippetId = req.params.id;
   const { title, codeText, language } = req.body;
@@ -328,7 +305,6 @@ app.put('/snippets/:id', authenticateToken, (req, res) => {
   });
 });
 
-// 4) Видалити snippet
 app.delete('/snippets/:id', authenticateToken, (req, res) => {
   const snippetId = req.params.id;
   db.get('SELECT userId FROM snippets WHERE id = ?', [snippetId], (err, row) => {
@@ -344,7 +320,6 @@ app.delete('/snippets/:id', authenticateToken, (req, res) => {
   });
 });
 
-// 5) Лайк snippet
 app.post('/snippets/:id/like', authenticateToken, (req, res) => {
   const snippetId = req.params.id;
   db.run('UPDATE snippets SET likes = likes + 1 WHERE id = ?', [snippetId], function(err) {
@@ -356,10 +331,9 @@ app.post('/snippets/:id/like', authenticateToken, (req, res) => {
   });
 });
 
-// Додати коментар до snippet-a
 app.post('/snippets/:snippetId/comments', authenticateToken, (req, res) => {
   const snippetId = req.params.snippetId;
-  const userId = req.user.userId;  // з JWT
+  const userId = req.user.userId;
   const { commentText, parentId } = req.body;
 
   if (!commentText) {
@@ -398,12 +372,10 @@ app.delete('/comments/:commentId', authenticateToken, (req, res) => {
   const commentId = req.params.commentId;
   const userId = req.user.userId;
 
-  // Спочатку з'ясуємо, чий це коментар
   db.get('SELECT userId FROM comments WHERE id = ?', [commentId], (err, row) => {
     if (err) return res.json({ error: err.message });
     if (!row) return res.json({ error: 'Коментар не знайдено.' });
 
-    // Перевіряємо, чи це автор
     if (row.userId !== userId) {
       return res.json({ error: 'Недостатньо прав для видалення.' });
     }
@@ -424,7 +396,6 @@ app.put('/comments/:commentId', authenticateToken, (req, res) => {
     return res.json({ error: 'Текст не може бути порожнім при редагуванні.' });
   }
 
-  // Той самий підхід: перевірити, чи це автор
   db.get('SELECT userId FROM comments WHERE id = ?', [commentId], (err, row) => {
     if (err) return res.json({ error: err.message });
     if (!row) return res.json({ error: 'Коментар не знайдено.' });
@@ -432,7 +403,6 @@ app.put('/comments/:commentId', authenticateToken, (req, res) => {
       return res.json({ error: 'Недостатньо прав для редагування.' });
     }
 
-    // Оновлюємо
     db.run(`
       UPDATE comments
       SET commentText = ?
@@ -446,7 +416,6 @@ app.put('/comments/:commentId', authenticateToken, (req, res) => {
   });
 });
 
-// Запуск сервера
 app.listen(port, () => {
   console.log(`Сервер запущений на порті ${port}`);
 });

@@ -1,0 +1,704 @@
+/*styles.css*/
+
+/* Скидання та базові стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #949494;
+}
+
+/* Зображення адаптивні */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------------------------------------------------
+   ХЕДЕР
+------------------------------------------------------------- */
+header {
+    background-color: #414141;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* .wrapper */
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Лого */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Іконка бургер-меню */
+#menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    display: none;
+    /* На десктопі схований, стане видимим на mobile */
+}
+
+/* -------------------------------------------------------------
+   ДЕСКТОП-МЕНЮ (горизонтальне)
+------------------------------------------------------------- */
+
+.desktop-menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.desktop-menu ul li {
+    margin: 0 15px;
+}
+
+.desktop-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.desktop-menu ul li a:hover,
+.desktop-menu ul li a.active {
+    color: #2891a9;
+}
+
+/* Якщо у вас там кнопки авторизації, можна зробити окремий клас */
+.auth-buttons-desktop {
+    display: flex;
+    align-items: center;
+}
+
+.auth-buttons-desktop .nav-btn {
+    background: teal;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s ease;
+}
+
+.auth-buttons-desktop .nav-btn:hover {
+    background: #1e9999;
+}
+
+/* -------------------------------------------------------------
+   ОФ-КАНВАС МЕНЮ (для мобільного)
+------------------------------------------------------------- */
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* сховано за екраном */
+    width: 150px;
+    height: 100vh;
+    background: #2f2f2f;
+    color: #fff;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.offcanvas-menu.open {
+    right: 0;
+}
+
+.offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: #3f3f3f;
+}
+
+.offcanvas-header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.close-btn {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Список посилань всередині оф-канваса */
+.offcanvas-menu ul {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0 20px;
+    overflow-y: auto;
+    /* якщо пунктів багато, можна прокрутити */
+}
+
+.offcanvas-menu ul li {
+    margin: 15px 0;
+}
+
+/* Посилання в оф-канвасі */
+.offcanvas-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.offcanvas-menu ul li a:hover,
+.offcanvas-menu ul li a.active {
+    color: #2891a9;
+}
+
+/* Кнопки авторизації в оф-канвасі */
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: teal;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #1e9999;
+}
+
+/* -------------------------------------------------------------
+   ОСНОВНІ СЕКЦІЇ, КОНТЕНТ
+------------------------------------------------------------- */
+.section {
+    padding: 40px 0;
+    min-height: 400px;
+}
+
+.section-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.image-container {
+    max-width: 40%;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.text-content {
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-content-container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* ********* Основні фони і стилі ********* */
+.main-page {
+    background-color: #949494;
+    padding: 35px 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-page-one {
+    background-color: #949494;
+    padding: 70px 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-page-text-container {
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 40px;
+    margin: 0 50px 0 50px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* ******** Заголовки, описи ******** */
+.main-page-title {
+    font-size: 48px;
+    color: #1b1d1f;
+    margin-bottom: 24px;
+}
+
+.main-page-subtitle {
+    font-size: 40px;
+    color: #1b1d1f;
+    margin-bottom: 22px;
+}
+
+.main-page-subsubtitle {
+    font-size: 22px;
+    color: #1b1d1f;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.main-page-descr {
+    font-size: 16px;
+    color: #1b1d1f;
+    margin-bottom: 32px;
+}
+
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #7d7d7d;
+}
+
+.facts-title {
+    font-size: 42px;
+    color: #1b1d1f;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.skillupcoding-logo {
+    max-width: 44%;
+    margin-left: 100px;
+}
+
+/* Кнопка */
+.main-page-btn {
+    background-color: #2891a9;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------
+   ФУТЕР
+------------------------------------------------------------- */
+footer {
+    background-color: #414141;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* -------------------------------------------------------------
+   КНОПКА "ПОВЕРНУТИСЯ НАГОРУ"
+------------------------------------------------------------- */
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top.show {
+    display: block;
+    opacity: 1;
+}
+
+.scroll-to-top:hover {
+    background-color: #4f4a4b;
+    transform: scale(1.1);
+}
+
+/* -------------------------------------------------------------
+   ТЕСТИ (питання)
+------------------------------------------------------------- */
+.question-block {
+    margin-bottom: 20px;
+}
+
+.question-block p {
+    font-weight: bold;
+}
+
+.question-block label {
+    display: block;
+    margin: 5px 0;
+}
+
+/* -------------------------------------------------------------
+   МОДАЛЬНІ ВІКНА (реєстрація, профіль, ...)
+------------------------------------------------------------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    cursor: pointer;
+}
+
+/* Форми в модалках */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label {
+    margin-top: 10px;
+}
+
+.modal-content form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content form button {
+    margin-top: 20px;
+    align-self: center;
+}
+
+/* Модалка профілю */
+#profile-modal .modal-content {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#profile-modal h2,
+#profile-modal p {
+    margin-bottom: 15px;
+}
+
+#profile-modal label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#profile-modal input,
+#profile-modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#profile-modal button {
+    margin-top: 10px;
+}
+
+/* name-field (режим вхід/реєстрація) */
+#name-field {
+    display: block;
+}
+
+#name-field.hidden {
+    display: none;
+}
+
+/* Фото в профілі */
+#uploadPicture {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Контейнер форми для Snippets */
+.snippet-form {
+    max-width: 500px;
+    /* обмежимо ширину */
+    margin: 30px auto;
+    /* центр по горизонталі, з відступом зверху/знизу */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    /* світлий фон */
+}
+
+/* Заголовок всередині форми */
+.snippet-form-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Усі label робимо блоковими, з відступами */
+.snippet-form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Поля в одному стовпці, на всю ширину */
+.snippet-form input[type="text"],
+.snippet-form select,
+.snippet-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    /* наслідувати шрифт */
+}
+
+.snippets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 колонки на ширину */
+    gap: 20px;
+    /* відступ між картками */
+    margin-top: 20px;
+}
+
+.snippet-card {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    min-height: 150px;
+}
+
+.snippet-card h4 {
+    margin-top: 0;
+    /* прибираємо зайвий відступ */
+}
+
+/* Контейнер для лайка */
+.snippet-like-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.snippet-like-count {
+    font-size: 16px;
+    margin-right: 5px;
+    /* відступ перед іконкою */
+}
+
+.snippet-like-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.snippet-like-container:hover .snippet-like-icon {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+.snippet-card pre code {
+    display: block;
+    text-align: left;
+    background-color: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+}
+
+textarea.form-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+/* -------------------------------------------------------------
+   АДАПТИВНІСТЬ (MEDIA QUERIES)
+------------------------------------------------------------- */
+@media (min-width: 1121px) {
+
+    .desktop-menu {
+        display: block;
+    }
+
+    #menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 1120px) {
+
+    .desktop-menu {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .main-page-title {
+        font-size: 36px;
+    }
+
+    .main-page-text-container {
+        padding: 20px;
+        max-width: 100%;
+        margin: 20px;
+    }
+
+    .section-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        max-width: 50%;
+        margin: 0 0 20px 0;
+    }
+
+    .text-content,
+    .text-content-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .skillupcoding-logo {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    .image-container {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 700px) {
+    .skillupcoding-logo {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-page-title {
+        font-size: 28px;
+    }
+
+    .main-page-subtitle {
+        font-size: 24px;
+    }
+
+    .main-page-subsubtitle {
+        font-size: 20px;
+    }
+}

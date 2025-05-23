@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snippets учасників — SkillUpCoding</title>
+    <meta
+      name="description"
+      content="Ознайомтесь з Snippets користувачів на SkillUpCoding. Дізнайтеся, чого досягли наші користувачі у навчанні програмування."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/star-logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/form.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a href="index.html" class="logo">SkillUpCoding</a>
+        <nav id="desktop-menu" class="desktop-menu">
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="snippets.html" class="active">Snippets</a></li>
+            <li><a href="algorithms.html">Алгоритми</a></li>
+            <li><a href="html-css.html">HTML/CSS</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="csharp.html">C#</a></li>
+            <li class="auth-buttons-desktop">
+              <button id="sign-in-button" class="nav-btn">Sign In</button>
+              <button id="sign-up-button" class="nav-btn">Sign Up</button>
+              <button id="profile-button" class="nav-btn" style="display: none">
+                Профіль
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div id="menu-icon" class="menu-icon">&#9776;</div>
+      </div>
+    </header>
+
+    <div id="offcanvas-menu" class="offcanvas-menu">
+      <div class="offcanvas-header">
+        <span id="close-menu" class="close-btn">&times;</span>
+        <h2>Меню</h2>
+      </div>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="snippets.html" class="active">Snippets</a></li>
+        <li><a href="algorithms.html">Алгоритми</a></li>
+        <li><a href="html-css.html">HTML/CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="csharp.html">C#</a></li>
+        <li class="auth-buttons">
+          <button id="sign-in-button-m" class="nav-btn">Sign In</button>
+          <button id="sign-up-button-m" class="nav-btn">Sign Up</button>
+          <button id="profile-button-m" class="nav-btn" style="display: none">
+            Профіль
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ====== Основна секція Snippets ====== -->
+    <section class="main-page-one wrapper">
+      <div class="main-page-text-container">
+        <h1 class="main-page-title">Snippets</h1>
+        <div class="snippet-form">
+          <h3 class="snippet-form-title">Створити новий Snippet</h3>
+
+          <label for="snippetTitle">Назва (title):</label>
+          <input type="text" id="snippetTitle" />
+
+          <label for="snippetLang">Мова:</label>
+          <select id="snippetLang">
+            <option value="JS">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="C#">C#</option>
+          </select>
+
+          <label for="snippetCode">Код:</label>
+          <textarea id="snippetCode" rows="5" cols="60"></textarea>
+
+          <button id="createSnippetBtn" class="main-page-btn">Зберегти</button>
+        </div>
+        <div class="snippet-form" style="margin-bottom: 10px">
+          <label for="sortSnippets">Сортувати за:</label>
+          <select id="sortSnippets">
+            <option value="dateDesc">Останні додані (нові зверху)</option>
+            <option value="dateAsc">Найстаріші зверху</option>
+            <option value="languageAsc">За мовою (A-Z)</option>
+            <option value="likesDesc">За кількістю лайків</option>
+          </select>
+          <button
+            id="sortSnippetsApply"
+            class="main-page-btn"
+            style="margin-top: 10px"
+          >
+            Застосувати
+          </button>
+        </div>
+        <div id="snippetsList" class="snippets-grid"></div>
+      </div>
+    </section>
+
+    <!-- Модальне вікно реєстрації -->
+    <div id="registration-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-registration-modal" class="close-btn">&times;</span>
+        <h2 id="auth-modal-title">Реєстрація</h2>
+        <form id="registration-form">
+          <div id="name-field">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit" class="main-page-btn">Зареєструватися</button>
+        </form>
+        <p id="switch-to-login">
+          Вже маєте аккаунт? <a href="#" id="to-login-link">Увійти</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Модальне вікно профілю -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-profile-modal" class="close-btn">&times;</span>
+        <h2>Ваш профіль</h2>
+        <form id="profile-form">
+          <img
+            id="profile-photo"
+            src=""
+            alt="Фото профілю"
+            style="
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+              display: block;
+              margin-bottom: 15px;
+            "
+          />
+          <label for="uploadPicture">Ваше фото:</label>
+          <input type="file" id="uploadPicture" name="profilePhoto" />
+          <p>Ім'я: <span id="user-name"></span></p>
+          <p>Email: <span id="user-email"></span></p>
+          <label for="aboutMe">Про себе:</label>
+          <textarea id="aboutMe" placeholder="Напишіть про себе..."></textarea>
+          <button type="submit" class="main-page-btn">Зберегти</button>
+        </form>
+        <div id="user-results">
+          <h3>Ваші результати тестів:</h3>
+          <ul id="results-list"></ul>
+        </div>
+        <button id="logout-button" class="main-page-btn">Вийти</button>
+      </div>
+    </div>
+
+    <div id="snippet-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-snippet-modal" class="close-btn">&times;</span>
+        <h2 id="modal-snippet-title"></h2>
+        <pre><code id="modal-snippet-code"></code></pre>
+        <p>Автор: <span id="modal-snippet-author"></span></p>
+
+        <!-- Форма додати комент -->
+        <textarea id="modal-commentText" class="form-input" rows="3"></textarea>
+        <button id="modal-addCommentBtn" class="nav-btn">Додати</button>
+
+        <!-- Тут відображення коментарів -->
+        <div id="commentsList"></div>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" class="scroll-to-top">/\</button>
+
+    <footer>
+      <p>
+        Проект створив Білик Володимир Сергійович, студент Технічного коледжу
+        ТНТУ ім. І. Пулюя. Всі права захищено © 2024
+      </p>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank"
+          ><img
+            src="img/facebook-icon-white.png"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><img
+            src="img/twitter-icon-white.png"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+      </div>
+    </footer>
+
+    <!-- Скрипт оф-канвасу -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const offcanvasMenu = document.getElementById("offcanvas-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        menuIcon.addEventListener("click", () => {
+          offcanvasMenu.classList.add("open");
+        });
+
+        closeMenuBtn.addEventListener("click", () => {
+          offcanvasMenu.classList.remove("open");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !offcanvasMenu.contains(e.target) &&
+            !menuIcon.contains(e.target)
+          ) {
+            offcanvasMenu.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

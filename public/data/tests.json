@@ -1,0 +1,404 @@
+{
+  "tests": [
+    {
+      "section": "html-css",
+      "testName": "Тест на знання HTML/CSS",
+      "questions": [
+        {
+          "question": "Що таке HTML?",
+          "options": [
+            "Мова програмування",
+            "Мова розмітки",
+            "Мова стилізації",
+            "База даних"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "question": "Який тег використовується для вставки зображень?",
+          "options": ["img", "picture", "src", "div"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що таке CSS?",
+          "options": [
+            "Мова програмування",
+            "Мова розмітки",
+            "Мова стилізації",
+            "Об'єктно-орієнтована мова"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "question": "Як задати червоний фон для елемента?",
+          "options": [
+            "background-color: red;",
+            "color: red;",
+            "text-color: red;",
+            "font-color: red;"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Який тег використовується для створення посилання?",
+          "options": ["a", "link", "url", "href"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що означає атрибут 'alt' у тега <img>?",
+          "options": [
+            "Текст замість зображення",
+            "Задає розмір зображення",
+            "Задає місце зображення",
+            "Задає відступ"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що таке 'flexbox' у CSS?",
+          "options": [
+            "Система для створення гнучких макетів",
+            "Фреймворк",
+            "Шаблон веб-сайту",
+            "Бібліотека JavaScript"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як задати шрифт для елемента?",
+          "options": ["font-family", "font-weight", "text-family", "font-color"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Яка властивість CSS задає відступи всередині елемента?",
+          "options": ["padding", "margin", "border", "height"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як задати абсолютне позиціонування для елемента?",
+          "options": [
+            "position: absolute;",
+            "position: fixed;",
+            "float: right;",
+            "display: block;"
+          ],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "section": "javascript",
+      "testName": "Тест на знання JavaScript",
+      "questions": [
+        {
+          "question": "Що таке JavaScript?",
+          "options": [
+            "Мова стилізації",
+            "Мова програмування",
+            "Текстовий редактор",
+            "Операційна система"
+          ],
+          "correctAnswer": 1
+        },
+        {
+          "question": "Що робить оператор '===' у JavaScript?",
+          "options": [
+            "Присвоює значення",
+            "Перевіряє рівність",
+            "Порівнює типи та значення",
+            "Викликає функцію"
+          ],
+          "correctAnswer": 2
+        },
+        {
+          "question": "Як оголосити змінну у JavaScript?",
+          "options": ["let", "int", "var", "const"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Який метод масивів додає елемент у кінець?",
+          "options": ["push()", "pop()", "shift()", "unshift()"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що таке 'callback' у JavaScript?",
+          "options": [
+            "Функція, викликана іншою функцією",
+            "Змінна",
+            "Об'єкт",
+            "Цикл"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Який оператор використовується для умовних операторів?",
+          "options": ["if", "for", "while", "switch"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що таке 'undefined' у JavaScript?",
+          "options": [
+            "Значення, яке не визначене",
+            "Помилка",
+            "Числове значення",
+            "Функція"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що таке замикання (closure) у JavaScript?",
+          "options": [
+            "Функція всередині іншої функції",
+            "Тип змінної",
+            "Оператор порівняння",
+            "Метод масиву"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як перетворити рядок на число?",
+          "options": ["parseInt()", "toString()", "JSON.stringify()", "map()"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Яка структура даних використовується для зберігання множинних значень?",
+          "options": ["Масив", "Функція", "Цикл", "Умова"],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "section": "python",
+      "testName": "Тест на знання Python",
+      "questions": [
+        {
+          "question": "Що таке Python?",
+          "options": [
+            "Мова програмування",
+            "База даних",
+            "Текстовий редактор",
+            "Мова стилізації"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як оголосити функцію в Python?",
+          "options": ["def", "function", "fun", "lambda"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як оголосити змінну в Python?",
+          "options": ["let", "var", "def", "Нічого"],
+          "correctAnswer": 3
+        },
+        {
+          "question": "Як коментувати код у Python?",
+          "options": ["#", "//", "!-- --", "/* */"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що таке список у Python?",
+          "options": [
+            "Динамічна структура даних",
+            "Константа",
+            "Функція",
+            "Мова програмування"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як перевірити умову у Python?",
+          "options": ["if", "switch", "for", "while"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як визначити цикл у Python?",
+          "options": ["for", "foreach", "repeat", "while"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що повертає функція len() у Python?",
+          "options": [
+            "Кількість елементів",
+            "Максимальне значення",
+            "Індекс",
+            "Рядок"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як оголосити словник у Python?",
+          "options": ["{key: value}", "[key: value]", "(key: value)", "key = value"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як додати елемент у список?",
+          "options": ["append()", "add()", "push()", "insert()"],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "section": "csharp",
+      "testName": "Тест на знання C#",
+      "questions": [
+        {
+          "question": "Що таке C#?",
+          "options": [
+            "Мова програмування",
+            "Текстовий редактор",
+            "Операційна система",
+            "Мова розмітки"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як оголосити змінну в C#?",
+          "options": ["var", "let", "int", "string"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Який тип даних використовується для цілих чисел у C#?",
+          "options": ["int", "float", "double", "string"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як оголосити метод у C#?",
+          "options": ["function", "method", "def", "void"],
+          "correctAnswer": 3
+        },
+        {
+          "question": "Що таке масив у C#?",
+          "options": [
+            "Колекція елементів",
+            "Функція",
+            "Клас",
+            "Цикл"
+          ],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Яка конструкція використовується для циклів у C#?",
+          "options": ["for", "repeat", "foreach", "do...while"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як визначити клас у C#?",
+          "options": ["class", "object", "type", "structure"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Який оператор використовується для порівняння в C#?",
+          "options": ["==", "=", "!=", "==="],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Як викликати метод у C#?",
+          "options": ["method()", "call method", "run method", "invoke()"],
+          "correctAnswer": 0
+        },
+        {
+          "question": "Що таке 'namespace' у C#?",
+          "options": ["Простір імен", "Клас", "Метод", "Змінна"],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+  "section": "algorithms",
+  "testName": "Тест на знання Алгоритмів",
+  "questions": [
+    {
+      "question": "Що таке алгоритм?",
+      "options": [
+        "Мова програмування",
+        "Набір інструкцій для вирішення задачі",
+        "Графічний елемент інтерфейсу",
+        "Фреймворк для розробки додатків"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Який алгоритм використовується для пошуку елемента в відсортованому масиві за логарифмічний час?",
+      "options": [
+        "Лінійний пошук",
+        "Бінарний пошук",
+        "Сортування злиттям",
+        "Алгоритм Дейкстри"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Що таке часова складність алгоритму?",
+      "options": [
+        "Кількість пам'яті, яку використовує алгоритм",
+        "Час виконання алгоритму залежно від розміру вхідних даних",
+        "Кількість розробників, необхідних для реалізації алгоритму",
+        "Час доби, коли алгоритм працює найкраще"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Яка структура даних працює за принципом LIFO?",
+      "options": ["Черга", "Список", "Стек", "Масив"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Який алгоритм сортування має середню часову складність O(n log n)?",
+      "options": [
+        "Бульбашкове сортування",
+        "Швидке сортування",
+        "Лінійне сортування",
+        "Лічильне сортування"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Який алгоритм сортування працює за принципом 'розділяй і володарюй'?",
+      "options": [
+        "Швидке сортування",
+        "Сортування вставками",
+        "Бульбашкове сортування",
+        "Лінійне сортування"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Який алгоритм використовує чергу для пошуку в ширину в графах?",
+      "options": [
+        "DFS (глибина спочатку)",
+        "Бінарний пошук",
+        "BFS (ширина спочатку)",
+        "Жадібний алгоритм"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Який з алгоритмів пошуку знаходить найкоротший шлях у графі?",
+      "options": [
+        "Бінарний пошук",
+        "Алгоритм Крускала",
+        "Алгоритм Дейкстри",
+        "Алгоритм Флойда-Воршелла"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Яка структура даних працює за принципом FIFO?",
+      "options": ["Черга", "Стек", "Масив", "Хеш-таблиця"],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Який з алгоритмів має найгірший час виконання O(n²)?",
+      "options": [
+        "Бінарний пошук",
+        "Сортування вставками",
+        "Швидке сортування",
+        "Пошук у ширину"
+      ],
+      "correctAnswer": 1
+        }
+      ]
+    }
+  ]
+}

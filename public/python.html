@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python: Легкий старт — Навчання на SkillUpCoding</title>
+    <meta
+      name="description"
+      content="Навчайтеся програмувати на Python з нашими уроками. Простота та універсальність цієї мови робить її ідеальною для початківців."
+    />
+    <meta
+      name="keywords"
+      content="Python, програмування, початківці, SkillUpCoding, веб-розробка, AI, machine learning"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/star-logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a href="index.html" class="logo">SkillUpCoding</a>
+        <nav id="desktop-menu" class="desktop-menu">
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="snippets.html">Snippets</a></li>
+            <li><a href="algorithms.html">Алгоритми</a></li>
+            <li><a href="html-css.html">HTML/CSS</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="python.html" class="active">Python</a></li>
+            <li><a href="csharp.html">C#</a></li>
+            <li class="auth-buttons-desktop">
+              <button id="sign-in-button" class="nav-btn">Sign In</button>
+              <button id="sign-up-button" class="nav-btn">Sign Up</button>
+              <button id="profile-button" class="nav-btn" style="display: none">
+                Профіль
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div id="menu-icon" class="menu-icon">&#9776;</div>
+      </div>
+    </header>
+    <div id="offcanvas-menu" class="offcanvas-menu">
+      <div class="offcanvas-header">
+        <span id="close-menu" class="close-btn">&times;</span>
+        <h2>Меню</h2>
+      </div>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="snippets.html">Snippets</a></li>
+        <li><a href="algorithms.html">Алгоритми</a></li>
+        <li><a href="html-css.html">HTML/CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="python.html" class="active">Python</a></li>
+        <li><a href="csharp.html">C#</a></li>
+        <li class="auth-buttons">
+          <button id="sign-in-button-m" class="nav-btn">Sign In</button>
+          <button id="sign-up-button-m" class="nav-btn">Sign Up</button>
+          <button id="profile-button-m" class="nav-btn" style="display: none">
+            Профіль
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <section id="python" class="main-page-one">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/python.jpg"
+              alt="Логотип або символ мови Python"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h1 class="main-page-title">Python</h1>
+              <p class="main-page-descr">
+                Python — це високорівнева мова програмування, яка відрізняється
+                своєю простотою, читабельністю та багатофункціональністю.
+                Створена в 1991 році Гвідо ван Россумом, ця мова швидко
+                завоювала популярність завдяки простоті синтаксису та
+                універсальності.
+              </p>
+              <p class="main-page-descr">
+                Python використовується в найрізноманітніших сферах: від
+                веб-розробки та автоматизації до наукових обчислень, машинного
+                навчання та створення штучного інтелекту.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="python-intro" class="main-page section background-container">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <div class="text-content-container">
+              <h2 class="main-page-subtitle">Вступ до Python</h2>
+              <p class="main-page-descr">
+                Python — це високорівнева мова програмування, відома своєю
+                простотою, читабельністю та широкою підтримкою з боку спільноти.
+                Вона має гнучкий синтаксис і великі можливості для
+                автоматизації, веб-розробки, аналізу даних, машинного навчання
+                та багатьох інших сфер.
+              </p>
+              <p class="main-page-descr">
+                Сьогодні Python використовується як початківцями, так і
+                досвідченими розробниками. Завдяки простій структурі та
+                розвинутому &laquo;батарейному&raquo; набору стандартних
+                модулів, ви можете швидко створювати прототипи і масштабувати їх
+                у повноцінні програми чи веб-сервіси.
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                Чому Python такий популярний?
+              </h3>
+              <ul class="main-page-list">
+                <li>
+                  <strong>Простота синтаксису.</strong> Код на Python легко
+                  читати та писати, що робить його ідеальним вибором для
+                  початківців.
+                </li>
+                <li>
+                  <strong>Велика кількість бібліотек.</strong> Існує безліч
+                  бібліотек для різних завдань: обробки даних (Pandas, NumPy),
+                  машинного навчання (TensorFlow, PyTorch), веб-розробки
+                  (Django, Flask) тощо.
+                </li>
+                <li>
+                  <strong>Велика спільнота.</strong> Завдяки численній спільноті
+                  розробників Python, ви завжди можете знайти відповіді на свої
+                  питання або допомогу в розв'язанні проблем.
+                </li>
+                <li>
+                  <strong>Універсальність.</strong> Python підходить для
+                  написання скриптів, веб-додатків, аналізу даних, автоматизації
+                  задач та створення великих програмних систем.
+                </li>
+              </ul>
+
+              <h3 class="main-page-subsubtitle">
+                Встановлення та запуск Python
+              </h3>
+              <p class="main-page-descr">
+                Для початку роботи з Python необхідно встановити інтерпретатор
+                Python, який доступний на офіційному сайті
+                <a href="https://www.python.org" target="_blank">python.org</a>.
+                Після встановлення ви можете перевірити його роботу, запустивши
+                термінал і виконавши команду:
+              </p>
+              <pre class="code-block">
+<code>python --version</code>
+          </pre>
+              <p class="main-page-descr">
+                Щоб написати та виконати простий скрипт на Python, можна
+                створити файл з розширенням <code>.py</code> і додати в нього
+                код. Наприклад:
+              </p>
+              <pre class="code-block">
+<code>print("Привіт, Python!")</code>
+          </pre>
+              <p class="main-page-descr">
+                Збережіть файл, а потім виконайте його в терміналі командою:
+              </p>
+              <pre class="code-block">
+<code>python файл.py</code>
+          </pre>
+
+              <!-- Основи Python -->
+              <h2 class="main-page-subtitle">Основи Python</h2>
+
+              <h3 class="main-page-subsubtitle">Змінні та типи даних</h3>
+              <p class="main-page-descr">
+                У Python змінні оголошуються динамічно, тобто вам не потрібно
+                вказувати їхній тип при створенні. Ось основні типи даних у
+                Python:
+              </p>
+              <ul class="main-page-list">
+                <li><strong>Цілі числа (int):</strong> <code>x = 10</code></li>
+                <li>
+                  <strong>Числа з плаваючою комою (float):</strong>
+                  <code>y = 3.14</code>
+                </li>
+                <li>
+                  <strong>Рядки (str):</strong> <code>текст = "Привіт"</code>
+                </li>
+                <li>
+                  <strong>Списки (list):</strong>
+                  <code>список = [1, 2, 3]</code>
+                </li>
+                <li>
+                  <strong>Кортежі (tuple):</strong>
+                  <code>кортеж = (1, 2, 3)</code>
+                </li>
+                <li>
+                  <strong>Словники (dict):</strong>
+                  <code>словник = {"ім'я": "Олексій", "вік": 25}</code>
+                </li>
+                <li>
+                  <strong>Логічні значення (bool):</strong>
+                  <code>істина = True</code>, <code>хиба = False</code>
+                </li>
+              </ul>
+              <p class="main-page-descr">Приклад використання змінних:</p>
+              <pre class="code-block">
+<code>ім'я = "Олексій"
+вік = 25
+print(f"Мене звати {ім'я}, і мені {вік} років.")
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">Умовні оператори</h3>
+              <p class="main-page-descr">
+                Python використовує умовні оператори для перевірки певних умов і
+                виконання відповідного коду:
+              </p>
+              <pre class="code-block">
+<code>вік = 18
+if вік >= 18:
+    print("Ви повнолітній.")
+else:
+    print("Ви неповнолітній.")
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">
+                Оператори порівняння в Python:
+              </h3>
+              <ul class="main-page-list">
+                <li><code>==</code> — дорівнює</li>
+                <li><code>!=</code> — не дорівнює</li>
+                <li><code>&gt;</code> — більше</li>
+                <li><code>&lt;</code> — менше</li>
+                <li><code>&gt;=</code> — більше або дорівнює</li>
+                <li><code>&lt;=</code> — менше або дорівнює</li>
+              </ul>
+
+              <h3 class="main-page-subsubtitle">Цикли</h3>
+              <p class="main-page-descr">
+                Цикли дозволяють виконувати код багато разів. У Python є два
+                основні типи циклів: <code>for</code> та <code>while</code>.
+              </p>
+
+              <h4 class="main-page-subsubtitle">Цикл for</h4>
+              <p class="main-page-descr">
+                Цикл <code>for</code> використовується для перебору елементів
+                списків, кортежів, рядків або інших ітерабельних об'єктів:
+              </p>
+              <pre class="code-block">
+<code>список = [1, 2, 3, 4, 5]
+for число in список:
+    print(число)
+</code>
+          </pre>
+
+              <h4 class="main-page-subsubtitle">Цикл while</h4>
+              <p class="main-page-descr">
+                Цикл <code>while</code> виконується, доки умова залишається
+                істинною:
+              </p>
+              <pre class="code-block">
+<code>лічильник = 0
+while лічильник < 5:
+    print(лічильник)
+    лічильник += 1
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">Функції</h3>
+              <p class="main-page-descr">
+                Функції дозволяють групувати код для його повторного
+                використання. В Python функції визначаються за допомогою
+                ключового слова
+                <code>def</code>:
+              </p>
+              <pre class="code-block">
+<code>def привітання(ім'я):
+    return f"Привіт, {ім'я}!"
+
+print(привітання("Олексій"))
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Функція може приймати кілька параметрів і повертати результат.
+                Використовуйте їх, щоб структурувати код і робити його більш
+                читабельним.
+              </p>
+
+              <!-- Розширені можливості Python -->
+              <h2 class="main-page-subtitle">Розширені можливості Python</h2>
+
+              <h3 class="main-page-subsubtitle">
+                Робота зі списками та словниками
+              </h3>
+              <p class="main-page-descr">
+                Списки та словники — це потужні структури даних у Python, які
+                дозволяють зберігати й обробляти велику кількість елементів.
+                Нижче наведено кілька базових операцій із ними.
+              </p>
+
+              <h4 class="main-page-subsubtitle">Списки</h4>
+              <p class="main-page-descr">
+                Списки — це впорядковані колекції, які можна змінювати
+                (додавати, видаляти елементи). Наприклад:
+              </p>
+              <pre class="code-block">
+<code>список = [1, 2, 3]
+список.append(4)  # Додаємо елемент
+список.remove(2)  # Видаляємо елемент
+print(список[0])  # Доступ до елемента за індексом
+</code>
+          </pre>
+
+              <h4 class="main-page-subsubtitle">Словники</h4>
+              <p class="main-page-descr">
+                Словники — це неупорядковані колекції пар
+                &laquo;ключ-значення&raquo;. Вони ідеально підходять для
+                зберігання асоціативних даних:
+              </p>
+              <pre class="code-block">
+<code>словник = {"ім'я": "Олексій", "вік": 25}
+словник["місто"] = "Київ"  # Додаємо нову пару
+print(словник["ім'я"])     # Доступ до значення за ключем
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">Обробка винятків</h3>
+              <p class="main-page-descr">
+                Python дозволяє обробляти помилки, щоб уникнути аварійної
+                зупинки програми. Для цього використовуються блоки
+                <code>try</code> та <code>except</code>:
+              </p>
+              <pre class="code-block">
+<code>try:
+    число = int(input("Введіть число: "))
+    print(f"Введене число: {число}")
+except ValueError:
+    print("Це не число!")
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Така конструкція дозволяє &laquo;перехопити&raquo; помилку і
+                виконати альтернативний код замість того, щоб програма просто
+                &laquo;завалилася&raquo;.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Модулі та бібліотеки</h3>
+              <p class="main-page-descr">
+                Однією з найбільших переваг Python є велика кількість вбудованих
+                модулів та сторонніх бібліотек. Ви можете імпортувати модулі для
+                виконання різноманітних завдань. Наприклад, для роботи з
+                випадковими числами:
+              </p>
+              <pre class="code-block">
+<code>import random
+число = random.randint(1, 10)
+print(число)
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Існують також популярні бібліотеки на кшталт NumPy (робота з
+                масивами), Pandas (аналіз даних), Matplotlib (побудова
+                графіків), TensorFlow/PyTorch (машинне навчання) тощо.
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                Об'єктно-орієнтоване програмування (ООП)
+              </h3>
+              <p class="main-page-descr">
+                Python підтримує ООП, що дозволяє створювати класи і об'єкти. Це
+                корисно при побудові складних систем, де потрібна
+                структурованість.
+              </p>
+              <pre class="code-block">
+<code>class Автомобіль:
+    def __init__(self, марка, модель):
+        self.марка = марка
+        self.модель = модель
+
+    def інформація(self):
+        return f"Автомобіль: {self.марка} {self.модель}"
+
+авто = Автомобіль("Tesla", "Model S")
+print(авто.інформація())
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">Підсумок</h3>
+              <p class="main-page-descr">
+                Python — це потужна, гнучка та легко зрозуміла мова
+                програмування, яка підходить для широкого спектра завдань. Від
+                автоматизації простих задач до розробки складних систем та
+                додатків, Python може стати вашим надійним інструментом у світі
+                програмування. Завдяки його простоті та широкій спільноті
+                розробників, ви можете швидко навчитися писати ефективний код та
+                розв'язувати реальні проблеми.
+              </p>
+              <p class="main-page-descr">
+                Якщо ви прагнете розвиватися в галузі аналізу даних, машинного
+                навчання чи веб-розробки, Python надасть вам усі потрібні
+                інструменти. Залишайтесь допитливими, експериментуйте з новими
+                бібліотеками та пам'ятайте, що найкращий шлях до опанування — це
+                практика, практика і ще раз практика.
+              </p>
+            </div>
+          </div>
+
+          <!-- Кнопка для запуску тесту Python -->
+          <button class="main-page-btn" id="go-to-python-test">
+            Перевір вивчене!
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Модальне вікно реєстрації -->
+    <div id="registration-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-registration-modal" class="close-btn">&times;</span>
+        <h2 id="auth-modal-title">Реєстрація</h2>
+        <form id="registration-form">
+          <div id="name-field">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit" class="main-page-btn">Зареєструватися</button>
+        </form>
+        <p id="switch-to-login">
+          Вже маєте аккаунт? <a href="#" id="to-login-link">Увійти</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Модальне вікно профілю -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-profile-modal" class="close-btn">&times;</span>
+        <h2>Ваш профіль</h2>
+        <form id="profile-form">
+          <img
+            id="profile-photo"
+            src=""
+            alt="Фото профілю"
+            style="
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+              display: block;
+              margin-bottom: 15px;
+            "
+          />
+          <label for="uploadPicture">Ваше фото:</label>
+          <input type="file" id="uploadPicture" name="profilePhoto" />
+          <p>Ім'я: <span id="user-name"></span></p>
+          <p>Email: <span id="user-email"></span></p>
+          <label for="aboutMe">Про себе:</label>
+          <textarea id="aboutMe" placeholder="Напишіть про себе..."></textarea>
+          <button type="submit" class="main-page-btn">Зберегти</button>
+        </form>
+        <div id="user-results">
+          <h3>Ваші результати тестів:</h3>
+          <ul id="results-list"></ul>
+        </div>
+        <button id="logout-button" class="main-page-btn">Вийти</button>
+      </div>
+    </div>
+
+    <!-- Модальне вікно з тестом на python -->
+    <div id="test-modal-python" class="modal">
+      <div class="modal-content">
+        <span id="close-modal-python" class="close-btn">&times;</span>
+        <h2>Тест на знання Python</h2>
+        <div id="test-questions-python"></div>
+        <div id="test-result-python" style="display: none"></div>
+        <button id="submit-test-python" class="main-page-btn">
+          Завершити тест
+        </button>
+        <button
+          id="retry-test-python"
+          class="main-page-btn"
+          style="display: none"
+        >
+          Пройти тест знову
+        </button>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" class="scroll-to-top">/\</button>
+
+    <footer>
+      <p>
+        Проект створив Білик Володимир Сергійович, студент Технічного коледжу
+        ТНТУ ім. І. Пулюя. Всі права захищено © 2024
+      </p>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank"
+          ><img
+            src="img/facebook-icon-white.png"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><img
+            src="img/twitter-icon-white.png"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+      </div>
+    </footer>
+
+    <!-- Скрипт оф-канвасу -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const offcanvasMenu = document.getElementById("offcanvas-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        menuIcon.addEventListener("click", () => {
+          offcanvasMenu.classList.add("open");
+        });
+
+        closeMenuBtn.addEventListener("click", () => {
+          offcanvasMenu.classList.remove("open");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !offcanvasMenu.contains(e.target) &&
+            !menuIcon.contains(e.target)
+          ) {
+            offcanvasMenu.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML і CSS для новачків — Поради та уроки від SkillUpCoding</title>
+    <meta
+      name="description"
+      content="Вивчіть HTML і CSS разом з SkillUpCoding. Опануйте основи створення веб-сторінок: структура HTML та стилізація за допомогою CSS."
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, верстка, веб-сторінки, SkillUpCoding"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/star-logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a href="index.html" class="logo">SkillUpCoding</a>
+        <nav id="desktop-menu" class="desktop-menu">
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="snippets.html">Snippets</a></li>
+            <li><a href="algorithms.html">Алгоритми</a></li>
+            <li><a href="html-css.html" class="active">HTML/CSS</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="csharp.html">C#</a></li>
+            <li class="auth-buttons-desktop">
+              <button id="sign-in-button" class="nav-btn">Sign In</button>
+              <button id="sign-up-button" class="nav-btn">Sign Up</button>
+              <button id="profile-button" class="nav-btn" style="display: none">
+                Профіль
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div id="menu-icon" class="menu-icon">&#9776;</div>
+      </div>
+    </header>
+
+    <div id="offcanvas-menu" class="offcanvas-menu">
+      <div class="offcanvas-header">
+        <span id="close-menu" class="close-btn">&times;</span>
+        <h2>Меню</h2>
+      </div>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="snippets.html">Snippets</a></li>
+        <li><a href="algorithms.html">Алгоритми</a></li>
+        <li><a href="html-css.html" class="active">HTML/CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="csharp.html">C#</a></li>
+        <li class="auth-buttons">
+          <button id="sign-in-button-m" class="nav-btn">Sign In</button>
+          <button id="sign-up-button-m" class="nav-btn">Sign Up</button>
+          <button id="profile-button-m" class="nav-btn" style="display: none">
+            Профіль
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <section id="html-css" class="main-page-one">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/html.jpg"
+              alt="Приклад HTML-коду та стилів CSS"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h1 class="main-page-title">HTML/CSS</h1>
+              <p class="main-page-descr">
+                HTML (HyperText Markup Language) — це мова розмітки, яка
+                використовується для створення структури веб-сторінок.
+                Веб-сторінка є набором елементів HTML, кожен з яких визначає, як
+                повинні виглядати і функціонувати різні частини веб-контенту.
+                Без HTML жоден веб-сайт не може існувати.
+              </p>
+              <p class="main-page-descr">
+                Уявімо HTML як каркас будівлі. Це структура, яка визначає, де
+                будуть розташовані заголовки, текст, зображення, форми тощо.
+                Кожен з цих елементів описується за допомогою тегів.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="html-css-intro" class="main-page section background-container">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <div class="text-content-container">
+              <h1 class="main-page-subtitle">Основи HTML</h1>
+
+              <!-- Теги HTML -->
+              <h2 class="main-page-subsubtitle">Теги HTML</h2>
+              <p class="main-page-descr">
+                Основні елементи HTML визначаються тегами. Теги — це ключові
+                частини HTML, які обмежують і формують вміст. Вони оточують
+                текст або інший контент і вказують, як цей контент повинен
+                виглядати або функціонувати. Кожен тег зазвичай має
+                відкривальний та закривальний варіант (наприклад,
+                <code>&lt;p&gt;</code> і <code>&lt;/p&gt;</code>), хоча існують
+                і одинарні теги (наприклад, <code>&lt;img&gt;</code>).
+              </p>
+              <p class="main-page-descr">
+                У HTML також існують атрибути, які додають додаткову інформацію
+                чи налаштування для конкретного елемента (наприклад,
+                <code>src</code> для зображень або <code>href</code> для
+                посилань). Використання тегів за призначенням робить ваш код
+                семантичним і зрозумілим, а також полегшує сприйняття сторінки
+                пошуковими системами та технологіями доступності.
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                Ось приклад базової HTML-структури:
+              </h3>
+              <pre class="code-block">
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Моя перша веб-сторінка&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Вітаю на моїй веб-сторінці&lt;/h1&gt;
+    &lt;p&gt;Це мій перший абзац тексту на сторінці.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Цей код містить основні теги: <br />
+                - &lt;!DOCTYPE html&gt; оголошує, що це документ HTML5.<br />
+                - Теги &lt;html&gt; і &lt;/html&gt; охоплюють всю
+                веб-сторінку.<br />
+                - Теги &lt;head&gt; і &lt;/head&gt; містять інформацію про
+                сторінку (метадані, назва тощо).<br />
+                - Теги &lt;body&gt; і &lt;/body&gt; охоплюють видимий вміст
+                сторінки, такий як заголовки, абзаци, зображення та інші
+                елементи.
+              </p>
+              <p class="main-page-descr">
+                У цьому прикладі файл <code>index.html</code> описує структуру
+                сторінки, де <code>&lt;head&gt;</code> містить метадані й
+                заголовок, а <code>&lt;body&gt;</code> – усе, що бачить
+                користувач. Дотримання правильної ієрархії (<code
+                  >&lt;h1&gt;, &lt;h2&gt;, &lt;p&gt;</code
+                >
+                тощо) допоможе надалі зручно стилізувати й підтримувати сайт.
+              </p>
+
+              <!-- СТРУКТУРНІ ТЕГИ -->
+              <h2 class="main-page-subsubtitle">Структурні теги</h2>
+              <ul class="main-page-list">
+                <li>&lt;h1&gt; - &lt;h6&gt;: Заголовки різних рівнів</li>
+                <li>&lt;p&gt;: Тег для абзацу тексту</li>
+                <li>&lt;a&gt;: Тег для створення посилання</li>
+                <li>&lt;img&gt;: Тег для вставки зображення</li>
+              </ul>
+              <p class="main-page-descr">
+                Використовуючи ці теги, ви формуєте базову семантику сторінки.
+                Наприклад, <code>&lt;h1&gt;</code> зазвичай використовується для
+                основного заголовка, <code>&lt;h2&gt;</code> і
+                <code>&lt;h3&gt;</code> – для підзаголовків, а
+                <code>&lt;p&gt;</code> призначений для блоків звичайного тексту.
+                Така впорядкованість сприяє кращій читабельності коду і простоті
+                навігації.
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                Приклад додавання зображення та посилання
+              </h3>
+              <pre class="code-block">
+<code>
+&lt;img src="image.jpg" alt="Опис зображення"&gt;
+&lt;a href="https://example.com"&gt;Перейти на інший сайт&lt;/a&gt;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Тут <code>&lt;img&gt;</code> відображає зображення, а атрибут
+                <code>alt</code> надає текстовий опис для користувачів із
+                порушеннями зору або у випадках, коли зображення не
+                завантажилося. Тег <code>&lt;a&gt;</code> створює
+                гіперпосилання, дозволяючи користувачам переходити на зовнішні
+                чи внутрішні сторінки.
+              </p>
+              <p class="main-page-descr">
+                HTML забезпечує лише базову структуру вашої веб-сторінки, але,
+                щоб надати їй візуальну привабливість і гнучкий макет, ви
+                використовуєте CSS, про який поговоримо далі.
+              </p>
+
+              <!-- ВСТУП ДО CSS -->
+              <h1 class="main-page-subtitle">Вступ до CSS</h1>
+
+              <h2 class="main-page-subsubtitle">Що таке CSS?</h2>
+              <p class="main-page-descr">
+                CSS (Cascading Style Sheets) — це мова стилізації, що дає змогу
+                задавати оформлення для елементів HTML. Якщо HTML — це
+                &laquo;скелет&raquo; веб-сторінки, то CSS можна порівняти з
+                &laquo;шкірою&raquo; та &laquo;одягом&raquo;, який надає вашому
+                сайту привабливого вигляду й зручності взаємодії.
+              </p>
+              <p class="main-page-descr">
+                Завдяки CSS ви можете керувати розташуванням блоків, кольорами,
+                шрифтами, відступами, анімаціями і навіть робити адаптивний
+                дизайн для мобільних пристроїв. Правильне використання CSS
+                дозволяє відділити стиль від структури: HTML відповідає за
+                розмітку, а CSS — за візуальне оформлення.
+              </p>
+
+              <h2 class="main-page-subsubtitle">
+                Основні способи підключення CSS
+              </h2>
+              <p class="main-page-descr">
+                Існує три основні способи підключення CSS до HTML-документа:
+                inline-стилі, внутрішні стилі та зовнішні стилі. У реальних
+                проєктах найчастіше використовують зовнішні файли .css, але
+                решта методів теж іноді стають у пригоді.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Inline-стилі</h3>
+              <p class="main-page-descr">
+                Застосовуються прямо в атрибуті <code>style</code> конкретного
+                елемента. Хоча такий підхід зручний для швидких правок, зайве
+                використання inline-стилів ускладнює подальшу підтримку й часто
+                суперечить принципам розділення коду на структурний (HTML) та
+                стилізувальний (CSS).
+              </p>
+              <pre class="code-block">
+<code>
+&lt;p style="color: blue;"&gt;Цей текст буде синім&lt;/p&gt;
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">Внутрішні стилі</h3>
+              <p class="main-page-descr">
+                Це стилі, що прописані між тегами
+                <code>&lt;style&gt;</code> всередині
+                <code>&lt;head&gt;</code> вашої HTML-сторінки. Вони дозволяють
+                описувати стилі для всієї сторінки, але якщо сторінок багато —
+                доведеться дублювати код або підключати стилі в кожній окремо.
+              </p>
+              <pre class="code-block">
+<code>
+&lt;style&gt;
+  p {
+    color: red;
+  }
+&lt;/style&gt;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                У невеликих проєктах внутрішні стилі можуть бути достатні, однак
+                у більш масштабних — застосовувати одне окреме джерело стилів
+                (зовнішній .css) набагато зручніше і зменшує дублювання.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Зовнішні стилі</h3>
+              <p class="main-page-descr">
+                Цей варіант найчастіше використовується у професійній розробці:
+                ви створюєте файл <code>styles.css</code> і підключаєте його у
+                <code>&lt;head&gt;</code> HTML-документа за допомогою:
+              </p>
+              <pre class="code-block">
+<code>
+&lt;link rel="stylesheet" href="styles.css"&gt;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Така практика полегшує командну роботу, адже кілька людей можуть
+                одночасно оновлювати стилі й HTML окремо. Крім того, браузери
+                кешують файл <code>.css</code>, що прискорює завантаження сайту.
+                Це дуже важливо для продуктивності та зручності користувачів.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Синтаксис CSS</h2>
+              <p class="main-page-descr">
+                У CSS є &laquo;селектор&raquo;, який визначає, до якого саме
+                елемента (чи групи елементів) застосовувати стилі, і
+                &laquo;декларації&raquo; у фігурних дужках, що складаються з
+                &laquo;властивості&raquo; та &laquo;значення&raquo;. Наприклад:
+              </p>
+              <pre class="code-block">
+<code>
+h1 {
+    color: green;
+    font-size: 24px;
+}
+
+p {
+    color: gray;
+    line-height: 1.5;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Якщо ви хочете, щоб усі посилання <code>&lt;a&gt;</code> були
+                синіми і не мали підкреслення, можна написати:
+                <code>a { color: blue; text-decoration: none; }</code>. Завдяки
+                гнучкій системі селекторів (класи, ідентифікатори, атрибути) ви
+                можете дуже точно налаштовувати стиль кожного елемента.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Каскадність у CSS</h2>
+              <p class="main-page-descr">
+                &laquo;Каскадність&raquo; означає, що якщо на елемент діє кілька
+                правил, то їх порядок і специфічність визначають, яке з них
+                &laquo;переможе&raquo;. Є три основні рівні:
+              </p>
+              <ul class="main-page-list">
+                <li>Inline-стилі (найвищий пріоритет)</li>
+                <li>Внутрішні стилі</li>
+                <li>Зовнішні стилі</li>
+              </ul>
+              <p class="main-page-descr">
+                Також селектори можуть мати різний &laquo;ваговий
+                коефіцієнт&raquo; (специфічність): наприклад,
+                <code>#header .menu li a</code> детальніший, ніж просто
+                <code>a</code>. Це означає, що за конфлікту останній
+                (детальніший) селектор матиме вищий пріоритет.
+              </p>
+
+              <!-- ПРАКТИКА ТА ПОРАДИ -->
+              <h1 class="main-page-subtitle">Практика та поради</h1>
+
+              <h2 class="main-page-subsubtitle">
+                Стилізація тексту за допомогою CSS
+              </h2>
+              <p class="main-page-descr">
+                Нижче наведено кілька ключових властивостей для оформлення
+                тексту, які зустрічаються в більшості сайтів:
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                color: Визначає колір тексту
+              </h3>
+              <pre class="code-block">
+<code>
+p {
+    color: blue;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Колір можна задавати назвою (blue), шістнадцятковим кодом
+                (#0000ff) чи функціями <code>rgb()</code>/<code>rgba()</code>.
+                Вибір кольорів сильно впливає на зручність читання та загальний
+                дизайн.
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                font-size: Задає розмір шрифту
+              </h3>
+              <pre class="code-block">
+<code>
+p {
+    font-size: 18px;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Розмір шрифту також можна встановлювати в <code>em</code>,
+                <code>rem</code>, відсотках тощо. Використання відносних одиниць
+                часто допомагає зробити сайт адаптивним до різних розмірів
+                екрана й налаштувань браузера.
+              </p>
+
+              <h3 class="main-page-subsubtitle">font-family: Шрифт тексту</h3>
+              <pre class="code-block">
+<code>
+p {
+    font-family: Arial, sans-serif;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Щоб шрифт відображався коректно у всіх користувачів, зазвичай
+                задають &laquo;стек&raquo; шрифтів: якщо немає першого,
+                використовується наступний. Наприклад:
+                <code>font-family: 'Open Sans', Arial, sans-serif;</code>.
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                text-align: Вирівнювання тексту
+              </h3>
+              <pre class="code-block">
+<code>
+h1 {
+    text-align: center;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Значення можуть бути <code>left</code>, <code>right</code>,
+                <code>center</code> та <code>justify</code> (вирівнювання за
+                шириною). Заголовки нерідко вирівнюють по центру, а звичайний
+                текст — за лівим краєм чи &laquo;в ширину&raquo;.
+              </p>
+
+              <!-- ОФОРМЛЕННЯ БЛОКІВ І ФОНІВ -->
+              <h2 class="main-page-subsubtitle">Оформлення блоків і фонів</h2>
+              <p class="main-page-descr">
+                Крім управління текстом, CSS дозволяє &laquo;прикрашати&raquo;
+                блоки й задавати кольори чи зображення фону, відступи та рамки.
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                background-color: Колір фону
+              </h3>
+              <pre class="code-block">
+<code>
+body {
+    background-color: lightgray;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Можна також використовувати <code>background-image</code>,
+                <code>background-repeat</code>, <code>background-position</code>
+                для більш складних ефектів. Наприклад, задати градієнт або
+                декоративне зображення.
+              </p>
+
+              <h3 class="main-page-subsubtitle">padding: Внутрішні відступи</h3>
+              <pre class="code-block">
+<code>
+div {
+    padding: 20px;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                <code>padding</code> створює простір між вмістом і рамкою
+                елемента. Якщо вам треба відстань між різними елементами,
+                використовуйте <code>margin</code>. А для власне рамки є
+                <code>border</code>.
+              </p>
+
+              <h3 class="main-page-subsubtitle">border: Рамка елементів</h3>
+              <pre class="code-block">
+<code>
+div {
+    border: 2px solid black;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                <code>border</code> дозволяє задати товщину, стиль (solid,
+                dotted) і колір. Використовуючи <code>border-radius</code>,
+                можна зробити заокруглення кутів (наприклад, для кнопок чи
+                карток).
+              </p>
+
+              <!-- СТВОРЕННЯ МАКЕТА ЗАВДЯКИ CSS -->
+              <h2 class="main-page-subsubtitle">
+                Створення макета за допомогою CSS
+              </h2>
+              <p class="main-page-descr">
+                Сучасні веб-сторінки часто використовують
+                <strong>Flexbox</strong> чи <strong>CSS Grid</strong> для
+                побудови макета. Це потужні інструменти, які дозволяють легко
+                створювати складні, адаптивні дизайни.
+              </p>
+              <p class="main-page-descr">
+                Є також позиціонування через <code>position: absolute;</code>,
+                <code>position: relative;</code> тощо, але воно частіше
+                застосовується для дрібних деталей (наприклад, іконок,
+                &laquo;спливаючих&raquo; вікон). У більшості випадків
+                <strong>flex</strong> чи <strong>grid</strong>
+                спрощують розробку.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Блокова модель</h3>
+              <p class="main-page-descr">
+                Кожен елемент на сторінці можна розглядати як прямокутну
+                &laquo;коробку&raquo; (box). Усередині цієї коробки є вміст,
+                навколо нього — <em>padding</em>, далі <em>border</em>, а вже
+                зовні — <em>margin</em>. Розуміючи цю модель, ви краще
+                контролюєте зовнішній вигляд елементів, їх відступи й суміжні
+                області.
+              </p>
+
+              <h3 class="main-page-subsubtitle">
+                Flexbox: Сучасний спосіб гнучких макетів
+              </h3>
+              <p class="main-page-descr">Приклад вертикального вирівнювання:</p>
+              <pre class="code-block">
+<code>
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                За допомогою Flexbox ви можете вказувати напрям (row/column),
+                упорядковувати елементи, розподіляти простір між ними та
+                вирівнювати їх по центру. Це значно полегшує створення
+                адаптивних макетів без громіздких &laquo;плаваючих&raquo;
+                блоків. Для ще складніших двовимірних макетів використовується
+                <strong>CSS Grid</strong>.
+              </p>
+
+              <!-- ПІДСУМОК -->
+              <h2 class="main-page-subsubtitle">Підсумок</h2>
+              <p class="main-page-descr">
+                HTML та CSS є фундаментом для створення веб-сторінок. HTML
+                формує структуру, а CSS відповідає за оформлення. Щоб стати
+                кваліфікованим веб-розробником, потрібно навчитися комбінувати
+                ці технології та використовувати їх для створення сучасних,
+                зручних та естетично привабливих веб-сайтів. Дуже важливо
+                пам'ятати про семантику HTML — це покращує доступність і SEO.
+              </p>
+              <p class="main-page-descr">
+                Надалі, ви можете додавати JavaScript, створювати адаптивні
+                макети під мобільні пристрої, або навіть застосовувати
+                фреймворки (Bootstrap, Tailwind, тощо). Але в основі залишається
+                вміле використання базових інструментів — розмітки HTML і
+                стилізації за допомогою CSS.
+              </p>
+            </div>
+          </div>
+
+          <!-- Кнопка для запуску тесту -->
+          <button class="main-page-btn" id="go-to-html-css-test">
+            Перевір вивчене!
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Модальне вікно реєстрації -->
+    <div id="registration-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-registration-modal" class="close-btn">&times;</span>
+        <h2 id="auth-modal-title">Реєстрація</h2>
+        <form id="registration-form">
+          <div id="name-field">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit" class="main-page-btn">Зареєструватися</button>
+        </form>
+        <p id="switch-to-login">
+          Вже маєте аккаунт? <a href="#" id="to-login-link">Увійти</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Модальне вікно профілю -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-profile-modal" class="close-btn">&times;</span>
+        <h2>Ваш профіль</h2>
+        <form id="profile-form">
+          <img
+            id="profile-photo"
+            src=""
+            alt="Фото профілю користувача"
+            style="
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+              display: block;
+              margin-bottom: 15px;
+            "
+          />
+          <label for="uploadPicture">Ваше фото:</label>
+          <input type="file" id="uploadPicture" name="profilePhoto" />
+          <p>Ім'я: <span id="user-name"></span></p>
+          <p>Email: <span id="user-email"></span></p>
+          <label for="aboutMe">Про себе:</label>
+          <textarea id="aboutMe" placeholder="Напишіть про себе..."></textarea>
+          <button type="submit" class="main-page-btn">Зберегти</button>
+        </form>
+        <div id="user-results">
+          <h3>Ваші результати тестів:</h3>
+          <ul id="results-list"></ul>
+        </div>
+        <button id="logout-button" class="main-page-btn">Вийти</button>
+      </div>
+    </div>
+
+    <!-- Модальне вікно тесту HTML/CSS -->
+    <div id="test-modal-html-css" class="modal">
+      <div class="modal-content">
+        <span id="close-modal-html-css" class="close-btn">&times;</span>
+        <h2>Тест на знання HTML/CSS</h2>
+        <div id="test-questions-html-css"></div>
+        <div id="test-result-html-css" style="display: none"></div>
+        <button id="submit-test-html-css" class="main-page-btn">
+          Завершити тест
+        </button>
+        <button
+          id="retry-test-html-css"
+          class="main-page-btn"
+          style="display: none"
+        >
+          Пройти тест знову
+        </button>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" class="scroll-to-top">/\</button>
+
+    <footer>
+      <p>
+        Проект створив Білик Володимир Сергійович, студент Технічного коледжу
+        ТНТУ ім. І. Пулюя. Всі права захищено © 2024
+      </p>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank"
+          ><img
+            src="img/facebook-icon-white.png"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><img
+            src="img/twitter-icon-white.png"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+      </div>
+    </footer>
+
+    <!-- Скрипт оф-канвасу -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const offcanvasMenu = document.getElementById("offcanvas-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        menuIcon.addEventListener("click", () => {
+          offcanvasMenu.classList.add("open");
+        });
+
+        closeMenuBtn.addEventListener("click", () => {
+          offcanvasMenu.classList.remove("open");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !offcanvasMenu.contains(e.target) &&
+            !menuIcon.contains(e.target)
+          ) {
+            offcanvasMenu.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

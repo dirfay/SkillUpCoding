@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillUpCoding — Ознайомлення з програмуванням для початківців</title>
+    <meta
+      name="description"
+      content="Ласкаво просимо на SkillUpCoding! Вивчайте програмування легко та зрозуміло з нашими уроками для початківців. Дізнайтеся більше про алгоритми, HTML/CSS, JavaScript та інше."
+    />
+    <meta
+      name="keywords"
+      content="програмування, навчання, SkillUpCoding, алгоритми, HTML, CSS, JavaScript"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/star-logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a href="index.html" class="logo">SkillUpCoding</a>
+        <nav id="desktop-menu" class="desktop-menu">
+          <ul>
+            <li><a href="index.html" class="active">Головна</a></li>
+            <li><a href="snippets.html">Snippets</a></li>
+            <li><a href="algorithms.html">Алгоритми</a></li>
+            <li><a href="html-css.html">HTML/CSS</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="csharp.html">C#</a></li>
+            <li class="auth-buttons-desktop">
+              <button id="sign-in-button" class="nav-btn">Sign In</button>
+              <button id="sign-up-button" class="nav-btn">Sign Up</button>
+              <button id="profile-button" class="nav-btn" style="display: none">
+                Профіль
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div id="menu-icon" class="menu-icon">&#9776;</div>
+      </div>
+    </header>
+
+    <div id="offcanvas-menu" class="offcanvas-menu">
+      <div class="offcanvas-header">
+        <span id="close-menu" class="close-btn">&times;</span>
+        <h2>Меню</h2>
+      </div>
+      <ul>
+        <li><a href="index.html" class="active">Головна</a></li>
+        <li><a href="snippets.html">Snippets</a></li>
+        <li><a href="algorithms.html">Алгоритми</a></li>
+        <li><a href="html-css.html">HTML/CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="csharp.html">C#</a></li>
+        <li class="auth-buttons-mobile">
+          <button id="sign-in-button-m" class="nav-btn">Sign In</button>
+          <button id="sign-up-button-m" class="nav-btn">Sign Up</button>
+          <button id="profile-button-m" class="nav-btn" style="display: none">
+            Профіль
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <section id="home" class="main-page-one">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <h1 class="main-page-title">
+            Ласкаво просимо на освітній сайт з програмування
+          </h1>
+          <p class="main-page-descr">
+            Тут ви знайдете все необхідне для старту в світі програмування. Ми
+            створили цей сайт, щоб допомогти початківцям вивчати основи
+            кодування та ділитися результатами з іншими користувачами. Навчальні
+            матеріали легко зрозумілі та орієнтовані на практичні приклади.
+          </p>
+          <button class="main-page-btn" id="go-to-languages-btn">
+            Вперед до вивчення!
+          </button>
+        </div>
+        <img
+          src="img/Logo.png"
+          alt="Логотип сайту SkillUpCoding"
+          class="skillupcoding-logo"
+        />
+      </div>
+    </section>
+
+    <!-- РОЗДІЛ 'Internet' -->
+    <section id="Internet" class="main-page section background-container">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/main.jpg"
+              alt="Ілюстрація 'Програмування та Інтернет'"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h2 class="main-page-title">Фрагменти Коду (Snippets)</h2>
+              <p class="main-page-descr">
+                Фрагменти коду, або &laquo;snippets&raquo;, — це невеликі уривки
+                програмного коду, які зручно зберігати для повторного
+                використання. Вони допомагають розробникам швидко включати
+                типові логічні блоки, структури даних чи інші готові рішення у
+                свої проекти, заощаджуючи час і зусилля.
+              </p>
+              <p class="main-page-descr">
+                Сервіс для зберігання та обміну snippet-ами зазвичай пропонує
+                зручний інтерфейс додавання, пошуку й підсвічування синтаксису
+                за різними мовами програмування. Окрім цього, багато платформ
+                дозволяють коментувати, лайкати та обговорювати, що сприяє
+                формуванню спільноти розробників.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- РОЗДІЛ 'algorithms' -->
+    <section id="algorithms" class="main-page section">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/algorithms.jpg"
+              alt="Зображення алгоритмів"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h2 class="facts-title">Чому варто вивчати алгоритми?</h2>
+              <p class="main-page-descr">
+                Алгоритми — це набір інструкцій для виконання задачі. Вони є
+                основою програмування, оскільки дозволяють вирішувати проблеми
+                ефективно та швидко. Вивчення алгоритмів допомагає зрозуміти, як
+                організувати код і зробити його більш оптимізованим.
+              </p>
+              <p class="main-page-descr">
+                Якщо ви навчитеся розуміти і використовувати базові алгоритми,
+                це дасть вам значну перевагу у створенні складних програм і
+                додатків. Алгоритми є фундаментальним знанням для будь-якого
+                програміста.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- РОЗДІЛ 'html-css' -->
+    <section id="html-css" class="main-page section background-container">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/html.jpg"
+              alt="Зображення HTML та CSS"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h2 class="facts-title">Основи HTML та CSS</h2>
+              <p class="main-page-descr">
+                HTML — це мова яка використовується для структурування вмісту на
+                веб-сторінках, а CSS відповідає за допомогою CSS ви можете
+                змінювати кольори, шрифти, розташування елементів і загальний
+                стиль веб-сторінки
+              </p>
+              <p class="main-page-descr">
+                Вивчення HTML та CSS є основою для створення веб-сторінок.
+                Розуміючи ці технології, ви зможете створювати структуру
+                сторінки і стилізувати її на свій смак. Це перший крок до
+                створення сучасних і функціональних сайтів.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- РОЗДІЛ 'javascript' -->
+    <section id="javascript" class="main-page section">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/javascript.jpg"
+              alt="Приклад JavaScript-коду"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h2 class="facts-title">
+                JavaScript — мова для динамічних сторінок
+              </h2>
+              <p class="main-page-descr">
+                JavaScript — це мова програмування, яка дозволяє зробити
+                веб-сторінки інтерактивними. Без JavaScript веб-сторінки були б
+                статичними та не реагували б на дії користувачів. Завдяки цій
+                мові можна створювати динамічні елементи, наприклад, спливаючі
+                вікна, інтерактивні форми, слайдери та анімації.
+              </p>
+              <p class="main-page-descr">
+                Вивчаючи JavaScript, ви відкриваєте для себе широкий спектр
+                можливостей — від створення простих анімацій до складних
+                веб-додатків, які можуть обробляти тисячі запитів за секунду.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- РОЗДІЛ 'other-languages' -->
+    <section
+      id="other-languages"
+      class="main-page section background-container"
+    >
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/python.jpg"
+              alt="Логотип Python"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h2 class="facts-title">
+                Що далі? Python, C# та інші мови програмування
+              </h2>
+              <p class="main-page-descr">
+                Після вивчення основних мов веб-розробки та алгоритмів, ви
+                можете розширити свої знання, вивчаючи інші популярні мови
+                програмування, такі як Python, C# та інші. Кожна з цих мов має
+                свої особливості та сфери застосування.
+              </p>
+              <p class="main-page-descr">
+                Опанувавши декілька мов програмування, ви зможете обрати ту, яка
+                найкраще відповідає вашим професійним цілям. Незалежно від того,
+                чи хочете ви працювати в сфері веб-розробки, аналізу даних або
+                створення ігор, світ програмування відкриває перед вами безмежні
+                можливості.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Модальне вікно реєстрації -->
+    <div id="registration-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-registration-modal" class="close-btn">&times;</span>
+        <h2 id="auth-modal-title">Реєстрація</h2>
+        <form id="registration-form">
+          <div id="name-field">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit" class="main-page-btn">Зареєструватися</button>
+        </form>
+        <p id="switch-to-login">
+          Вже маєте аккаунт? <a href="#" id="to-login-link">Увійти</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Модальне вікно профілю -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-profile-modal" class="close-btn">&times;</span>
+        <h2>Ваш профіль</h2>
+        <form id="profile-form">
+          <img
+            id="profile-photo"
+            src=""
+            alt="Фото профілю"
+            style="
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+              display: block;
+              margin-bottom: 15px;
+            "
+          />
+          <label for="uploadPicture">Ваше фото:</label>
+          <input type="file" id="uploadPicture" name="profilePhoto" />
+          <p>Ім'я: <span id="user-name"></span></p>
+          <p>Email: <span id="user-email"></span></p>
+          <label for="aboutMe">Про себе:</label>
+          <textarea id="aboutMe" placeholder="Напишіть про себе..."></textarea>
+          <button type="submit" class="main-page-btn">Зберегти</button>
+        </form>
+        <div id="user-results">
+          <h3>Ваші результати тестів:</h3>
+          <ul id="results-list"></ul>
+        </div>
+        <button id="logout-button" class="main-page-btn">Вийти</button>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" class="scroll-to-top">/\</button>
+
+    <footer>
+      <p>
+        Проект створив Білик Володимир Сергійович, студент Технічного коледжу
+        ТНТУ ім. І. Пулюя. Всі права захищено © 2024
+      </p>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank"
+          ><img
+            src="img/facebook-icon-white.png"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><img
+            src="img/twitter-icon-white.png"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+      </div>
+    </footer>
+
+    <!-- Скрипт оф-канвасу -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const offcanvasMenu = document.getElementById("offcanvas-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        menuIcon.addEventListener("click", () => {
+          offcanvasMenu.classList.add("open");
+        });
+
+        closeMenuBtn.addEventListener("click", () => {
+          offcanvasMenu.classList.remove("open");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !offcanvasMenu.contains(e.target) &&
+            !menuIcon.contains(e.target)
+          ) {
+            offcanvasMenu.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C# для новачків — Основи програмування | SkillUpCoding</title>
+    <meta
+      name="description"
+      content="C# для новачків. Вивчіть основи розробки додатків з SkillUpCoding за допомогою нашого сайту."
+    />
+    <meta
+      name="keywords"
+      content="C#, .NET, програмування, Microsoft, SkillUpCoding, об'єктно-орієнтоване"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/star-logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a href="index.html" class="logo">SkillUpCoding</a>
+        <nav id="desktop-menu" class="desktop-menu">
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="snippets.html">Snippets</a></li>
+            <li><a href="algorithms.html">Алгоритми</a></li>
+            <li><a href="html-css.html">HTML/CSS</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="csharp.html" class="active">C#</a></li>
+            <li class="auth-buttons-desktop">
+              <button id="sign-in-button" class="nav-btn">Sign In</button>
+              <button id="sign-up-button" class="nav-btn">Sign Up</button>
+              <button id="profile-button" class="nav-btn" style="display: none">
+                Профіль
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div id="menu-icon" class="menu-icon">&#9776;</div>
+      </div>
+    </header>
+
+    <div id="offcanvas-menu" class="offcanvas-menu">
+      <div class="offcanvas-header">
+        <span id="close-menu" class="close-btn">&times;</span>
+        <h2>Меню</h2>
+      </div>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="snippets.html">Snippets</a></li>
+        <li><a href="algorithms.html">Алгоритми</a></li>
+        <li><a href="html-css.html">HTML/CSS</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="csharp.html" class="active">C#</a></li>
+        <li class="auth-buttons">
+          <button id="sign-in-button-m" class="nav-btn">Sign In</button>
+          <button id="sign-up-button-m" class="nav-btn">Sign Up</button>
+          <button id="profile-button-m" class="nav-btn" style="display: none">
+            Профіль
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <section id="csharp" class="main-page-one">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/csharp.jpg"
+              alt="Зображення, що символізує мову C#"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h1 class="main-page-title">C#</h1>
+              <p class="main-page-descr">
+                C# — це сучасна, об'єктно-орієнтована мова програмування,
+                розроблена корпорацією Microsoft. Вона є частиною платформи .NET
+                і дозволяє створювати різноманітні додатки: від веб-сервісів і
+                настільних програм до мобільних додатків та ігор. C# зручна для
+                початківців завдяки зрозумілому синтаксису, а її потужний
+                функціонал робить її популярною серед досвідчених розробників.
+              </p>
+              <p class="main-page-descr">
+                Основна мета C# — бути простою та продуктивною мовою, здатною
+                конкурувати з іншими сучасними мовами програмування, такими як
+                Java і C++. Вона чудово підходить для створення корпоративних
+                рішень, а також використовується для розробки веб-додатків з
+                використанням ASP.NET, хмарних сервісів, ігор на платформі Unity
+                та багатьох інших видів програмного забезпечення.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="csharp-intro" class="main-page section background-container">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <div class="text-content-container">
+              <!-- Вступ до C# -->
+              <h2 class="main-page-subtitle">Вступ до C#</h2>
+              <p class="main-page-descr">
+                C# (Сі-Шарп) — це об'єктно-орієнтована мова програмування,
+                розроблена корпорацією Microsoft на базі платформи .NET. Вона
+                поєднує в собі простоту та продуктивність, а також пропонує
+                високий рівень безпечності типів. Завдяки цим якостям C#
+                підходить як для початківців, так і для досвідчених розробників.
+              </p>
+              <p class="main-page-descr">
+                Мову використовують для створення настільних програм,
+                веб-сервісів, мобільних додатків і навіть ігор (через популярний
+                рушій Unity). Середовище розробки зазвичай базується на Visual
+                Studio або більш легкому Visual Studio Code, але є й інші
+                варіанти. Нижче розглянемо основні можливості C# та типові
+                елементи синтаксису.
+              </p>
+
+              <!-- Особливості C# -->
+              <h3 class="main-page-subsubtitle">Особливості C#</h3>
+              <ul class="main-page-list">
+                <li>
+                  <strong>Об'єктно-орієнтоване програмування (ООП).</strong>
+                  C# базується на ООП, що означає, що основою будь-якої програми
+                  є об'єкти та класи, які представляють реальні або абстрактні
+                  сутності.
+                </li>
+                <li>
+                  <strong>Безпечність типів (type safety).</strong> C#
+                  забезпечує високий рівень безпеки типів даних, що допомагає
+                  уникати багатьох помилок під час компіляції та виконання
+                  програми.
+                </li>
+                <li>
+                  <strong>Інтеграція з .NET.</strong> Оскільки C# є частиною
+                  екосистеми .NET, програми на C# можуть використовувати
+                  потужний набір бібліотек та інструментів для розробки.
+                </li>
+                <li>
+                  <strong>Гарна підтримка асинхронного програмування.</strong>
+                  C# дозволяє легко реалізовувати асинхронні операції, що є
+                  важливим для створення високонавантажених додатків.
+                </li>
+                <li>
+                  <strong>Універсальність.</strong> Ви можете використовувати C#
+                  для розробки як настільних, так і веб, мобільних додатків, а
+                  також ігор (наприклад, у Unity).
+                </li>
+              </ul>
+
+              <!-- Початок роботи з C# -->
+              <h3 class="main-page-subsubtitle">Початок роботи з C#</h3>
+              <p class="main-page-descr">
+                Для того щоб почати програмувати на C#, необхідно мати
+                інтегроване середовище розробки (IDE), таке як
+                <strong>Visual Studio</strong> або більш легку версію —
+                <strong>Visual Studio Code</strong>. Обидва інструменти
+                підтримують платформу .NET і надають можливості для компіляції
+                та відладки коду на C#.
+              </p>
+              <p class="main-page-descr">
+                Після встановлення середовища ви можете створити новий проєкт
+                (наприклад, &laquo;Console App&raquo;), де і писатимете свій
+                C#-код. Далі система збирає все у виконуваний файл або
+                бібліотеку, яку можна запустити під .NET-оточенням.
+              </p>
+
+              <!-- Привіт, світ! -->
+              <h3 class="main-page-subsubtitle">Привіт, світ!</h3>
+              <p class="main-page-descr">
+                Перший код, який ми напишемо на C#, — це простий приклад, що
+                виводить "Привіт, світ!" на екран. Ось як це виглядає:
+              </p>
+              <pre class="code-block">
+<code>
+using System;
+
+class Програма
+{
+    static void Main()
+    {
+        Console.WriteLine("Привіт, світ!");
+    }
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                <code>using System;</code> — це директива, що дозволяє
+                використовувати функціонал бібліотеки <code>System</code>.<br />
+                <code>class Програма</code> — це оголошення класу. У C# все
+                знаходиться всередині класів.<br />
+                <code>static void Main()</code> — це точка входу в програму, де
+                починається її виконання.
+              </p>
+
+              <!-- Основи синтаксису C# -->
+              <h2 class="main-page-subtitle">Основи синтаксису C#</h2>
+
+              <h3 class="main-page-subsubtitle">Змінні та типи даних</h3>
+              <p class="main-page-descr">
+                C# є строго типізованою мовою програмування, що означає, що
+                кожна змінна має чітко визначений тип даних. Основні типи даних
+                включають:
+              </p>
+              <ul class="main-page-list">
+                <li>
+                  Цілі числа: <code>int</code> — 32-бітове ціле число,
+                  <code>long</code> — 64-бітове ціле число.
+                </li>
+                <li>
+                  Числа з плаваючою комою: <code>float</code>,
+                  <code>double</code>.
+                </li>
+                <li>
+                  Логічні значення: <code>bool</code> — може мати значення
+                  <code>true</code> або <code>false</code>.
+                </li>
+                <li>Рядки: <code>string</code> — для зберігання тексту.</li>
+                <li>
+                  Масиви: <code>int[] масив = new int[5];</code> — масив цілих
+                  чисел.
+                </li>
+              </ul>
+              <p class="main-page-descr">Приклад оголошення змінних:</p>
+              <pre class="code-block">
+<code>
+int вік = 25;
+string ім'я = "Олексій";
+bool єПовнолітній = true;
+
+Console.WriteLine($"Мене звати {ім'я}, мені {вік} років.");
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Змінні в C# можуть бути локальними (оголошені всередині методу)
+                або полями класу (якщо оголошені поза методами, але всередині
+                класу). Також у C# існують <code>var</code> (не плутати з
+                JavaScript), які дозволяють компілятору виводити тип змінної
+                автоматично, але він усе одно залишається статично визначеним
+                під час компіляції.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Умовні оператори</h3>
+              <p class="main-page-descr">
+                Умовні оператори допомагають виконувати певний код залежно від
+                умов. Основні умовні оператори в C#:
+              </p>
+              <ul class="main-page-list">
+                <li><code>if</code>: Перевіряє умову.</li>
+                <li>
+                  <code>else</code>: Виконується, якщо умова в
+                  <code>if</code> не виконується.
+                </li>
+                <li>
+                  <code>else if</code>: Використовується для перевірки
+                  додаткових умов.
+                </li>
+              </ul>
+              <p class="main-page-descr">
+                Приклад використання умовних операторів:
+              </p>
+              <pre class="code-block">
+<code>
+int вік = 18;
+
+if (вік >= 18)
+{
+    Console.WriteLine("Ви повнолітній.");
+}
+else
+{
+    Console.WriteLine("Ви неповнолітній.");
+}
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">Цикли</h3>
+              <p class="main-page-descr">
+                Цикли в C# дозволяють виконувати одні й ті ж операції кілька
+                разів. Існує кілька типів циклів:
+              </p>
+              <ul class="main-page-list">
+                <li>
+                  <code>for</code>: Використовується для повторення дій певну
+                  кількість разів.
+                </li>
+                <li>
+                  <code>while</code>: Виконує код, поки умова залишається
+                  істинною.
+                </li>
+                <li>
+                  <code>foreach</code>: Призначений для ітерації по колекціях,
+                  таких як масиви або списки.
+                </li>
+              </ul>
+              <p class="main-page-descr">Приклад циклу <code>for</code>:</p>
+              <pre class="code-block">
+<code>
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine($"Номер {i}");
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Цикл <code>foreach</code> використовується для обходу елементів
+                колекцій (наприклад, <code>List&lt;T&gt;</code>), і має
+                синтаксис:
+                <code>foreach (var елемент in колекція) { ... }</code>. Це
+                полегшує роботу з колекціями, оскільки не потрібно керувати
+                індексами.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Функції (методи)</h3>
+              <p class="main-page-descr">
+                Функції або методи — це блоки коду, які можна викликати для
+                виконання певних дій. Методи можуть приймати параметри та
+                повертати результат.
+              </p>
+              <pre class="code-block">
+<code>
+int Сума(int a, int b)
+{
+    return a + b;
+}
+
+int результат = Сума(5, 3);
+Console.WriteLine($"Результат: {результат}");
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Якщо метод не повертає значення, вживають <code>void</code>.
+                Використання методів допомагає розбити програму на логічні
+                частини і уникнути дублювання коду.
+              </p>
+
+              <!-- ООП в C# -->
+              <h2 class="main-page-subtitle">
+                Об'єктно-орієнтоване програмування (ООП) в C#
+              </h2>
+              <p class="main-page-descr">
+                C# є об'єктно-орієнтованою мовою програмування, що означає, що
+                основна ідея цієї мови — це робота з об'єктами. Клас — це шаблон
+                (креслення) для створення об'єктів. Об'єкти мають властивості
+                (дані) та методи (дії).
+              </p>
+
+              <h3 class="main-page-subsubtitle">Класи та об'єкти</h3>
+              <p class="main-page-descr">
+                Клас у C# можна порівняти з кресленням автомобіля, а об'єкт — це
+                конкретний автомобіль, створений за цим кресленням. Клас
+                визначає структуру об'єкта, а об'єкт є його екземпляром.
+              </p>
+              <p class="main-page-descr">Ось приклад створення класу:</p>
+              <pre class="code-block">
+<code>
+class Автомобіль
+{
+    public string Марка { get; set; }
+    public string Модель { get; set; }
+
+    public void Опис()
+    {
+        Console.WriteLine($"Це {Марка} {Модель}.");
+    }
+}
+</code>
+          </pre>
+              <p class="main-page-descr">Створення об'єкта на основі класу:</p>
+              <pre class="code-block">
+<code>
+Автомобіль авто = new Автомобіль();
+авто.Марка = "Tesla";
+авто.Модель = "Model S";
+авто.Опис();
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">Інкапсуляція</h3>
+              <p class="main-page-descr">
+                Інкапсуляція означає приховування внутрішньої реалізації об'єкта
+                та надання доступу до даних через методи або властивості. Це
+                робить код більш безпечним і гнучким.
+              </p>
+              <pre class="code-block">
+<code>
+class Книга
+{
+    private string назва;
+
+    public string Назва
+    {
+        get { return назва; }
+        set { назва = value; }
+    }
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Тут поле <code>назва</code> є закритим (<code>private</code>), а
+                доступ до нього здійснюється через властивість
+                <code>Назва</code>
+                (<code>public</code>).
+              </p>
+
+              <h3 class="main-page-subsubtitle">Спадкування</h3>
+              <p class="main-page-descr">
+                Спадкування дозволяє створювати нові класи на основі існуючих,
+                що забезпечує повторне використання коду.
+              </p>
+              <pre class="code-block">
+<code>
+class Тварина
+{
+    public void Голос()
+    {
+        Console.WriteLine("Тварина видає звук");
+    }
+}
+
+class Собака : Тварина
+{
+    public void Гавкати()
+    {
+        Console.WriteLine("Собака гавкає");
+    }
+}
+</code>
+          </pre>
+
+              <h3 class="main-page-subsubtitle">Поліморфізм</h3>
+              <p class="main-page-descr">
+                Поліморфізм дозволяє використовувати один і той самий метод для
+                різних типів об'єктів. У C# для цього застосовується ключове
+                слово
+                <code>virtual</code> у базовому класі та <code>override</code>
+                у похідному.
+              </p>
+              <pre class="code-block">
+<code>
+class Тварина
+{
+    public virtual void Голос()
+    {
+        Console.WriteLine("Тварина видає звук");
+    }
+}
+
+class Собака : Тварина
+{
+    public override void Голос()
+    {
+        Console.WriteLine("Собака гавкає");
+    }
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Так можна написати метод <code>Голос()</code> в базовому класі
+                <code>Тварина</code>, а потім реалізувати різну поведінку для
+                <code>Собака</code>, <code>Кішка</code> тощо.
+              </p>
+
+              <h2 class="main-page-subtitle">Підсумок</h2>
+              <p class="main-page-descr">
+                C# — це потужна та гнучка мова програмування, яка дозволяє
+                розробляти широкий спектр додатків. Від простих настільних
+                програм до складних корпоративних систем і відеоігор на базі
+                Unity, C# є універсальним інструментом для розробників. Завдяки
+                підтримці об'єктно-орієнтованих принципів, таких як
+                інкапсуляція, спадкування та поліморфізм, C# допомагає
+                створювати зрозумілий, підтримуваний та масштабований код.
+              </p>
+              <p class="main-page-descr">
+                Зрозумівши базові концепції C#, ви можете надалі вивчати
+                фреймворки (ASP.NET для вебу, Xamarin для мобільних
+                застосунків), розробляти ігри або працювати з базами даних. Мова
+                та платформа .NET мають величезну екосистему, що відкриває
+                безліч можливостей у розробці.
+              </p>
+            </div>
+          </div>
+
+          <!-- Кнопка для запуску тесту -->
+          <button class="main-page-btn" id="go-to-csharp-test">
+            Перевір вивчене!
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Модальне вікно реєстрації -->
+    <div id="registration-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-registration-modal" class="close-btn">&times;</span>
+        <h2 id="auth-modal-title">Реєстрація</h2>
+        <form id="registration-form">
+          <div id="name-field">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit" class="main-page-btn">Зареєструватися</button>
+        </form>
+        <p id="switch-to-login">
+          Вже маєте аккаунт? <a href="#" id="to-login-link">Увійти</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Модальне вікно профілю -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-profile-modal" class="close-btn">&times;</span>
+        <h2>Ваш профіль</h2>
+        <form id="profile-form">
+          <img
+            id="profile-photo"
+            src=""
+            alt="Фото профілю"
+            style="
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+              display: block;
+              margin-bottom: 15px;
+            "
+          />
+          <label for="uploadPicture">Ваше фото:</label>
+          <input type="file" id="uploadPicture" name="profilePhoto" />
+          <p>Ім'я: <span id="user-name"></span></p>
+          <p>Email: <span id="user-email"></span></p>
+          <label for="aboutMe">Про себе:</label>
+          <textarea id="aboutMe" placeholder="Напишіть про себе..."></textarea>
+          <button type="submit" class="main-page-btn">Зберегти</button>
+        </form>
+        <div id="user-results">
+          <h3>Ваші результати тестів:</h3>
+          <ul id="results-list"></ul>
+        </div>
+        <button id="logout-button" class="main-page-btn">Вийти</button>
+      </div>
+    </div>
+
+    <!-- Модальне вікно з тестом на С# -->
+    <div id="test-modal-csharp" class="modal">
+      <div class="modal-content">
+        <span id="close-modal-csharp" class="close-btn">&times;</span>
+        <h2>Тест на знання C#</h2>
+        <div id="test-questions-csharp"></div>
+        <div id="test-result-csharp" style="display: none"></div>
+        <button id="submit-test-csharp" class="main-page-btn">
+          Завершити тест
+        </button>
+        <button
+          id="retry-test-csharp"
+          class="main-page-btn"
+          style="display: none"
+        >
+          Пройти тест знову
+        </button>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" class="scroll-to-top">/\</button>
+
+    <footer>
+      <p>
+        Проект створив Білик Володимир Сергійович, студент Технічного коледжу
+        ТНТУ ім. І. Пулюя. Всі права захищено © 2024
+      </p>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank"
+          ><img
+            src="img/facebook-icon-white.png"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><img
+            src="img/twitter-icon-white.png"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+      </div>
+    </footer>
+
+    <!-- Скрипт оф-канвасу -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const offcanvasMenu = document.getElementById("offcanvas-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        menuIcon.addEventListener("click", () => {
+          offcanvasMenu.classList.add("open");
+        });
+
+        closeMenuBtn.addEventListener("click", () => {
+          offcanvasMenu.classList.remove("open");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !offcanvasMenu.contains(e.target) &&
+            !menuIcon.contains(e.target)
+          ) {
+            offcanvasMenu.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

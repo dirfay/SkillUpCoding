@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript для початківців — Практичні приклади та поради</title>
+    <meta
+      name="description"
+      content="Опануйте JavaScript для створення інтерактивних веб-додатків. Простий і доступний курс для початківців від SkillUpCoding."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, веб, інтерактив, SkillUpCoding, початківці"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/star-logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a href="index.html" class="logo">SkillUpCoding</a>
+        <nav id="desktop-menu" class="desktop-menu">
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="snippets.html">Snippets</a></li>
+            <li><a href="algorithms.html">Алгоритми</a></li>
+            <li><a href="html-css.html">HTML/CSS</a></li>
+            <li><a href="javascript.html" class="active">JavaScript</a></li>
+            <li><a href="python.html">Python</a></li>
+            <li><a href="csharp.html">C#</a></li>
+            <li class="auth-buttons-desktop">
+              <button id="sign-in-button" class="nav-btn">Sign In</button>
+              <button id="sign-up-button" class="nav-btn">Sign Up</button>
+              <button id="profile-button" class="nav-btn" style="display: none">
+                Профіль
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div id="menu-icon" class="menu-icon">&#9776;</div>
+      </div>
+    </header>
+
+    <div id="offcanvas-menu" class="offcanvas-menu">
+      <div class="offcanvas-header">
+        <span id="close-menu" class="close-btn">&times;</span>
+        <h2>Меню</h2>
+      </div>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="snippets.html">Snippets</a></li>
+        <li><a href="algorithms.html">Алгоритми</a></li>
+        <li><a href="html-css.html">HTML/CSS</a></li>
+        <li><a href="javascript.html" class="active">JavaScript</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="csharp.html">C#</a></li>
+        <li class="auth-buttons">
+          <button id="sign-in-button-m" class="nav-btn">Sign In</button>
+          <button id="sign-up-button-m" class="nav-btn">Sign Up</button>
+          <button id="profile-button-m" class="nav-btn" style="display: none">
+            Профіль
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <section id="javascript" class="main-page-one">
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <img
+              src="img/javascript.jpg"
+              alt="Ілюстрація JavaScript-коду на екрані"
+              class="image-container"
+            />
+            <div class="text-content">
+              <h1 class="main-page-title">JavaScript</h1>
+              <p class="main-page-descr">
+                JavaScript — це динамічна мова програмування, яка
+                використовується для додавання інтерактивності на веб-сторінки.
+                Якщо HTML відповідає за структуру, а CSS за стилістику, то
+                JavaScript робить веб-сторінку “живою”, додаючи
+                функціональність, анімацію та можливість реагувати на дії
+                користувача.
+              </p>
+              <p class="main-page-descr">
+                Це основна мова для розробки сучасних веб-додатків і стала одним
+                із найважливіших інструментів у світі веб-розробки. JavaScript
+                дозволяє вам маніпулювати елементами сторінки в реальному часі,
+                взаємодіяти з користувачем та обробляти дані без
+                перезавантаження сторінки.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="javascript-intro"
+      class="main-page section background-container"
+    >
+      <div class="wrapper">
+        <div class="main-page-text-container">
+          <div class="section-content">
+            <div class="text-content-container">
+              <h2 class="main-page-subtitle">Вступ до JavaScript</h2>
+              <p class="main-page-descr">
+                JavaScript — це потужна і динамічна мова програмування, яка
+                використовується для створення інтерактивних та динамічних
+                веб-сторінок. Якщо HTML визначає структуру, а CSS відповідає за
+                оформлення, то JavaScript робить ваш сайт &laquo;живим&raquo;,
+                дозволяючи реагувати на дії користувачів, змінювати вміст на
+                льоту та відправляти/отримувати дані без перезавантаження
+                сторінки.
+              </p>
+              <p class="main-page-descr">
+                На відміну від традиційних серверних мов, JavaScript виконується
+                безпосередньо в браузері (хоча є й середовища, наприклад
+                Node.js, де JavaScript виконується на сервері). Так ви можете
+                створити логіку, яка оновлює сторінку &laquo;тут і зараз&raquo;,
+                реагуючи на кліки, введення користувача чи отримані з сервера
+                дані.
+              </p>
+
+              <!-- Що може робити JavaScript? -->
+              <h3 class="main-page-subsubtitle">Що може робити JavaScript?</h3>
+              <p class="main-page-descr">
+                JavaScript має дуже широкий спектр можливостей:
+              </p>
+              <ul class="main-page-list">
+                <li>
+                  Реагувати на дії користувача: наприклад, клік на кнопку або
+                  заповнення форми.
+                </li>
+                <li>
+                  Маніпулювати елементами HTML: змінювати текст, стилі, додавати
+                  або видаляти елементи.
+                </li>
+                <li>
+                  Збирати та відправляти дані: JavaScript може взаємодіяти із
+                  сервером, відправляючи або отримуючи дані через API.
+                </li>
+                <li>
+                  Додавати анімації: створювати динамічний контент і анімацію.
+                </li>
+                <li>
+                  Валідація форм: перевірка правильності введених даних у формах
+                  перед їх надсиланням.
+                </li>
+              </ul>
+              <p class="main-page-descr">
+                Завдяки цим можливостям, JavaScript є ключовою технологією для
+                &laquo;фронтенду&raquo; і дає змогу створювати веб-програми зі
+                складною логікою та приємним досвідом користування.
+              </p>
+
+              <!-- Вбудовування JavaScript у HTML -->
+              <h2 class="main-page-subsubtitle">
+                Вбудовування JavaScript у HTML
+              </h2>
+              <p class="main-page-descr">
+                JavaScript можна додавати до HTML кількома способами. Нижче
+                наведено три основні варіанти.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Вбудований код (inline)</h3>
+              <pre class="code-block">
+<code>
+&lt;button onclick="alert('Привіт, світе!')"&gt;Натисни мене&lt;/button&gt;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Такий підхід вбудовує код JavaScript безпосередньо у тег. Хоча
+                це й швидко, але в масштабних проєктах inline-скрипти
+                ускладнюють підтримку коду. Проте для демо чи невеликих
+                прикладів може стати в нагоді.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Внутрішній скрипт</h3>
+              <p class="main-page-descr">
+                Додається всередині тегу <code>&lt;script&gt;</code> у межах
+                HTML-документа. Приклад:
+              </p>
+              <pre class="code-block">
+<code>
+&lt;script&gt;
+  alert('Це повідомлення при завантаженні сторінки');
+&lt;/script&gt;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Цей спосіб дає змогу тримати код в одному місці, але якщо ваш
+                сайт має кілька сторінок, доведеться копіювати ці скрипти знову
+                і знову. До того ж великі обсяги внутрішніх скриптів можуть
+                зменшувати читабельність HTML.
+              </p>
+
+              <h3 class="main-page-subsubtitle">Зовнішній файл</h3>
+              <p class="main-page-descr">
+                У цьому випадку код зберігається в окремому файлі (наприклад,
+                <code>script.js</code>) і підключається до сторінки за
+                допомогою:
+              </p>
+              <pre class="code-block">
+<code>
+&lt;script src="script.js"&gt;&lt;/script&gt;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Такий метод найчастіше використовують у реальних проєктах, бо
+                дозволяє розділити структуру (HTML) і функціональність
+                (JavaScript). До того ж, браузери кешують зовнішні скрипти, що
+                покращує продуктивність.
+              </p>
+
+              <!-- Основи JavaScript -->
+              <h1 class="main-page-subtitle">Основи JavaScript</h1>
+
+              <h2 class="main-page-subsubtitle">Змінні та типи даних</h2>
+              <p class="main-page-descr">
+                Змінні — це місця для зберігання даних. В JavaScript є кілька
+                способів оголошення змінних: <code>var</code>, <code>let</code>,
+                та <code>const</code>. Найчастіше використовують
+                <code>let</code> і <code>const</code>, оскільки вони надають
+                кращий контроль над областю видимості й запобігають деяким
+                &laquo;підступним&raquo; помилкам, характерним для
+                <code>var</code>.
+              </p>
+              <pre class="code-block">
+<code>
+let ім'я = 'Олексій';
+const вік = 25;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                <code>let</code> дає змогу перевизначати значення змінної, а
+                <code>const</code> — це константа, котру не можна змінити.
+                Використовуйте <code>const</code> там, де ви впевнені, що
+                змінювати значення не потрібно, це підвищує надійність коду.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Типи даних</h2>
+              <p class="main-page-descr">
+                JavaScript має кілька основних типів даних:
+              </p>
+              <ul class="main-page-list">
+                <li>Числа: <code>let число = 42;</code></li>
+                <li>Рядки: <code>let текст = 'Привіт, світе!';</code></li>
+                <li>Булеві значення: <code>let правда = true;</code></li>
+                <li>Масиви: <code>let масив = [1, 2, 3];</code></li>
+                <li>
+                  Об'єкти: <code>let людина = {ім'я: 'Олексій', вік: 25};</code>
+                </li>
+              </ul>
+              <p class="main-page-descr">
+                Крім того, є <code>null</code> (відсутність значення) та
+                <code>undefined</code> (значення не визначене). У сучасному
+                JavaScript можна також використовувати типи BigInt, Symbol та
+                інші розширені можливості. Гнучкість типів допомагає швидше
+                розробляти, але будьте уважні, бо JavaScript є динамічно
+                типізованою мовою.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Оператори</h2>
+              <p class="main-page-descr">
+                Оператори в JavaScript застосовують для виконання математичних,
+                логічних і порівняльних операцій:
+              </p>
+              <ul class="main-page-list">
+                <li>Арифметичні оператори: <code>+, -, *, /, %</code></li>
+                <li>
+                  Оператори порівняння:
+                  <code>==, ===, !=, &gt;, &lt;, &gt;=, &lt;=</code>
+                </li>
+                <li>Логічні оператори: <code>&&, ||, !</code></li>
+              </ul>
+              <pre class="code-block">
+<code>
+let a = 5;
+let b = 10;
+let сума = a + b; // 15
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Важливо розрізняти <code>==</code> (нестроге порівняння, яке
+                перетворює типи) і <code>===</code> (строге порівняння, коли
+                типи мають збігатися). Використання <code>===</code>
+                зазвичай безпечніше і передбачуваніше.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Умовні оператори</h2>
+              <p class="main-page-descr">
+                JavaScript дозволяє виконувати різні дії залежно від умов за
+                допомогою оператора <code>if...else</code> (та
+                <code>else if</code>) або <code>switch</code>.
+              </p>
+              <pre class="code-block">
+<code>
+let вік = 20;
+
+if (вік >= 18) {
+    console.log('Ви повнолітній');
+} else {
+    console.log('Ви неповнолітній');
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                У складніших ситуаціях можна використовувати
+                <code>switch</code>:
+                <code>switch(значення) { case 'x': ... }</code>. Це зручно, коли
+                є кілька можливих &laquo;гілок&raquo; логіки.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Функції</h2>
+              <p class="main-page-descr">
+                Функції в JavaScript — це блоки коду, які можна викликати
+                повторно. Вони можуть приймати параметри й повертати результат:
+              </p>
+              <pre class="code-block">
+<code>
+function привітати(ім'я) {
+    return `Привіт, ${ім'я}!`;
+}
+
+console.log(привітати('Олексій')); // Привіт, Олексій!
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Функції допомагають розбивати програму на менші частини, які
+                легко тестувати й повторно використовувати. Якщо якась операція
+                повторюється кілька разів, краще винести її у функцію.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Стрілкові функції (ES6)</h2>
+              <p class="main-page-descr">
+                У новіших версіях JavaScript з'явився синтаксис
+                &laquo;стрілкових&raquo; функцій, який скорочує запис і покращує
+                читабельність коду. Наприклад:
+              </p>
+              <pre class="code-block">
+<code>
+const привіт = (ім'я) => `Привіт, ${ім'я}!`;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Стрілкові функції також зберігають лексичне оточення для
+                <code>this</code>, що особливо корисно при роботі з методами
+                об'єктів чи обробниками подій.
+              </p>
+
+              <!-- Практичне застосування JavaScript -->
+              <h1 class="main-page-subtitle">
+                Практичне застосування JavaScript
+              </h1>
+
+              <h2 class="main-page-subsubtitle">Взаємодія з HTML через DOM</h2>
+              <p class="main-page-descr">
+                JavaScript надає доступ до елементів веб-сторінки через DOM
+                (Document Object Model). З його допомогою ви можете динамічно
+                змінювати тексти, стилі та структуру сторінки.
+              </p>
+              <pre class="code-block">
+<code>
+&lt;p id="текст"&gt;Це початковий текст.&lt;/p&gt;
+&lt;button onclick="змінитиТекст()"&gt;Змінити текст&lt;/button&gt;
+
+&lt;script&gt;
+function змінитиТекст() {
+    document.getElementById('текст').textContent = 'Текст змінено!';
+}
+&lt;/script&gt;
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Така взаємодія дозволяє створювати &laquo;живі&raquo; форми,
+                спливаючі вікна, галереї зображень, слайдери і безліч інших
+                &laquo;динамічних&raquo; елементів на сторінці. Сучасні
+                фреймворки (React, Vue, Angular) також використовують цю модель
+                для оновлення інтерфейсу.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Обробка подій</h2>
+              <p class="main-page-descr">
+                JavaScript може реагувати на події, такі як натискання кнопки,
+                введення тексту у форму чи прокручування сторінки. Наприклад:
+              </p>
+              <pre class="code-block">
+<code>
+document.getElementById('кнопка').addEventListener('click', function() {
+    alert('Кнопка натиснута!');
+});
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Є багато типів подій: <code>click</code>, <code>keyup</code>,
+                <code>change</code>, <code>submit</code> та ін. Завдяки цим
+                обробникам ви керуєте поведінкою сторінки, коли з нею взаємодіє
+                користувач.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Цикли</h2>
+              <p class="main-page-descr">
+                Цикли дозволяють повторювати певні дії. В JavaScript є:
+                <code>for</code>, <code>while</code> та <code>do...while</code>.
+              </p>
+              <pre class="code-block">
+<code>
+for (let i = 0; i < 5; i++) {
+    console.log(`Цикл номер: ${i}`);
+}
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Цикли корисні, коли треба обійти масив, обробити колекцію
+                елементів DOM чи повторити якусь дію кілька разів.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Робота з масивами</h2>
+              <p class="main-page-descr">
+                Масиви — це впорядковані колекції даних. Ви можете додавати,
+                видаляти, сортувати й перебирати їх. Наприклад:
+              </p>
+              <pre class="code-block">
+<code>
+let масив = [1, 2, 3];
+масив.push(4); // [1, 2, 3, 4]
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Для ітерації можна використати <code>for</code>,
+                <code>for...of</code>, методи <code>forEach</code>,
+                <code>map</code>, <code>filter</code> тощо. Це основа для
+                обробки списків, табличних даних і колекцій DOM.
+              </p>
+
+              <h2 class="main-page-subsubtitle">
+                Робота з сервером: AJAX та Fetch API
+              </h2>
+              <p class="main-page-descr">
+                JavaScript дозволяє взаємодіяти з сервером, отримувати та
+                відправляти дані без перезавантаження сторінки (так званий
+                AJAX). У сучасному підході часто використовують
+                <code>fetch()</code>:
+              </p>
+              <pre class="code-block">
+<code>
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Помилка:', error));
+</code>
+          </pre>
+              <p class="main-page-descr">
+                Це дуже зручно для створення &laquo;односторінкових&raquo; (SPA)
+                чи &laquo;динамічних&raquo; застосунків, коли ви відправляєте
+                запит і отримуєте дані у форматі JSON, а потім оновлюєте
+                сторінку &laquo;на льоту&raquo;.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Поради для початківців</h2>
+              <ul class="main-page-list">
+                <li>
+                  Практикуйтесь: Чим більше ви писатимете код, тим краще ви
+                  будете розуміти JavaScript.
+                </li>
+                <li>
+                  Вивчайте консоль: Використовуйте інструменти розробника в
+                  браузері, щоб бачити помилки та відстежувати роботу скриптів.
+                </li>
+                <li>
+                  Досліджуйте документацію: Вивчайте офіційну документацію (MDN
+                  Web Docs) для поглиблених знань про мову.
+                </li>
+              </ul>
+              <p class="main-page-descr">
+                Окрім цього, корисно розібратися з базовими поняттями
+                асинхронності, &laquo;promise&raquo;, &laquo;async/await&raquo;,
+                бо це дає змогу краще організувати роботу з мережею та іншими
+                тривалими операціями.
+              </p>
+
+              <h2 class="main-page-subsubtitle">Підсумок</h2>
+              <p class="main-page-descr">
+                JavaScript — це потужний інструмент для створення інтерактивних
+                веб-сторінок і веб-додатків. Вивчаючи його основи, ви відкриєте
+                перед собою безліч можливостей для розробки динамічного контенту
+                та веб-функціональності. Практикуйтесь, експериментуйте й не
+                бійтеся пробувати щось нове: ця мова є одним із найпоширеніших
+                інструментів у веб-розробці.
+              </p>
+              <p class="main-page-descr">
+                Далі можна вивчити популярні фреймворки (React, Vue, Angular),
+                Node.js на сервері, системи збірки та інше. Але фундамент — це
+                розуміння того, як працює сам JavaScript: його типи, змінні,
+                функції, робота з DOM, обробка подій і взаємодія з сервером.
+                Опановуючи ці елементи, ви станете впевненішим
+                &laquo;фронтенд-інженером&raquo;.
+              </p>
+            </div>
+          </div>
+
+          <!-- Кнопка для запуску тесту -->
+          <button class="main-page-btn" id="go-to-javascript-test">
+            Перевір вивчене!
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Модальне вікно реєстрації -->
+    <div id="registration-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-registration-modal" class="close-btn">&times;</span>
+        <h2 id="auth-modal-title">Реєстрація</h2>
+        <form id="registration-form">
+          <div id="name-field">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit" class="main-page-btn">Зареєструватися</button>
+        </form>
+        <p id="switch-to-login">
+          Вже маєте аккаунт? <a href="#" id="to-login-link">Увійти</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Модальне вікно профілю -->
+    <div id="profile-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-profile-modal" class="close-btn">&times;</span>
+        <h2>Ваш профіль</h2>
+        <form id="profile-form">
+          <img
+            id="profile-photo"
+            src=""
+            alt="Фото профілю"
+            style="
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+              display: block;
+              margin-bottom: 15px;
+            "
+          />
+          <label for="uploadPicture">Ваше фото:</label>
+          <input type="file" id="uploadPicture" name="profilePhoto" />
+          <p>Ім'я: <span id="user-name"></span></p>
+          <p>Email: <span id="user-email"></span></p>
+          <label for="aboutMe">Про себе:</label>
+          <textarea id="aboutMe" placeholder="Напишіть про себе..."></textarea>
+          <button type="submit" class="main-page-btn">Зберегти</button>
+        </form>
+        <div id="user-results">
+          <h3>Ваші результати тестів:</h3>
+          <ul id="results-list"></ul>
+        </div>
+        <button id="logout-button" class="main-page-btn">Вийти</button>
+      </div>
+    </div>
+
+    <!-- Модальне вікно з тестом на java script -->
+    <div id="test-modal-javascript" class="modal">
+      <div class="modal-content">
+        <span id="close-modal-javascript" class="close-btn">&times;</span>
+        <h2>Тест на знання JavaScript</h2>
+        <div id="test-questions-javascript"></div>
+        <div id="test-result-javascript" style="display: none"></div>
+        <button id="submit-test-javascript" class="main-page-btn">
+          Завершити тест
+        </button>
+        <button
+          id="retry-test-javascript"
+          class="main-page-btn"
+          style="display: none"
+        >
+          Пройти тест знову
+        </button>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" class="scroll-to-top">/\</button>
+
+    <footer>
+      <p>
+        Проект створив Білик Володимир Сергійович, студент Технічного коледжу
+        ТНТУ ім. І. Пулюя. Всі права захищено © 2024
+      </p>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank"
+          ><img
+            src="img/facebook-icon-white.png"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><img
+            src="img/twitter-icon-white.png"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+      </div>
+    </footer>
+
+    <!-- Скрипт оф-канвас-->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const offcanvasMenu = document.getElementById("offcanvas-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        menuIcon.addEventListener("click", () => {
+          offcanvasMenu.classList.add("open");
+        });
+
+        closeMenuBtn.addEventListener("click", () => {
+          offcanvasMenu.classList.remove("open");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !offcanvasMenu.contains(e.target) &&
+            !menuIcon.contains(e.target)
+          ) {
+            offcanvasMenu.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,6 +1,3 @@
-/*styles.css*/
-
-/* Скидання та базові стилі */
 * {
     margin: 0;
     padding: 0;
@@ -15,16 +12,12 @@ body {
     background-color: #949494;
 }
 
-/* Зображення адаптивні */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* -------------------------------------------------------------
-   ХЕДЕР
-------------------------------------------------------------- */
 header {
     background-color: #414141;
     color: white;
@@ -35,7 +28,6 @@ header {
     z-index: 1000;
 }
 
-/* .wrapper */
 .wrapper {
     max-width: 1400px;
     margin: 0 auto;
@@ -44,7 +36,6 @@ header {
     align-items: center;
 }
 
-/* Лого */
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -53,18 +44,12 @@ header {
     margin-left: 20px;
 }
 
-/* Іконка бургер-меню */
 #menu-icon {
     font-size: 30px;
     cursor: pointer;
     color: white;
     display: none;
-    /* На десктопі схований, стане видимим на mobile */
 }
-
-/* -------------------------------------------------------------
-   ДЕСКТОП-МЕНЮ (горизонтальне)
-------------------------------------------------------------- */
 
 .desktop-menu ul {
     display: flex;
@@ -88,7 +73,6 @@ header {
     color: #2891a9;
 }
 
-/* Якщо у вас там кнопки авторизації, можна зробити окремий клас */
 .auth-buttons-desktop {
     display: flex;
     align-items: center;
@@ -110,14 +94,10 @@ header {
     background: #1e9999;
 }
 
-/* -------------------------------------------------------------
-   ОФ-КАНВАС МЕНЮ (для мобільного)
-------------------------------------------------------------- */
 .offcanvas-menu {
     position: fixed;
     top: 0;
     right: -300px;
-    /* сховано за екраном */
     width: 150px;
     height: 100vh;
     background: #2f2f2f;
@@ -150,20 +130,17 @@ header {
     cursor: pointer;
 }
 
-/* Список посилань всередині оф-канваса */
 .offcanvas-menu ul {
     list-style: none;
     margin-top: 20px;
     padding: 0 20px;
     overflow-y: auto;
-    /* якщо пунктів багато, можна прокрутити */
 }
 
 .offcanvas-menu ul li {
     margin: 15px 0;
 }
 
-/* Посилання в оф-канвасі */
 .offcanvas-menu ul li a {
     text-decoration: none;
     color: #fff;
@@ -177,7 +154,6 @@ header {
     color: #2891a9;
 }
 
-/* Кнопки авторизації в оф-канвасі */
 .auth-buttons {
     display: flex;
     flex-direction: column;
@@ -200,9 +176,6 @@ header {
     background: #1e9999;
 }
 
-/* -------------------------------------------------------------
-   ОСНОВНІ СЕКЦІЇ, КОНТЕНТ
-------------------------------------------------------------- */
 .section {
     padding: 40px 0;
     min-height: 400px;
@@ -233,7 +206,6 @@ header {
     text-align: left;
 }
 
-/* ********* Основні фони і стилі ********* */
 .main-page {
     background-color: #949494;
     padding: 35px 0 35px;
@@ -263,7 +235,6 @@ header {
     text-align: center;
 }
 
-/* ******** Заголовки, описи ******** */
 .main-page-title {
     font-size: 48px;
     color: #1b1d1f;
@@ -308,7 +279,6 @@ header {
     margin-left: 100px;
 }
 
-/* Кнопка */
 .main-page-btn {
     background-color: #2891a9;
     color: white;
@@ -319,9 +289,6 @@ header {
     cursor: pointer;
 }
 
-/* -------------------------------------------------------------
-   ФУТЕР
-------------------------------------------------------------- */
 footer {
     background-color: #414141;
     color: white;
@@ -348,9 +315,6 @@ footer {
     transform: scale(1.1);
 }
 
-/* -------------------------------------------------------------
-   КНОПКА "ПОВЕРНУТИСЯ НАГОРУ"
-------------------------------------------------------------- */
 .scroll-to-top {
     position: fixed;
     bottom: 40px;
@@ -377,9 +341,6 @@ footer {
     transform: scale(1.1);
 }
 
-/* -------------------------------------------------------------
-   ТЕСТИ (питання)
-------------------------------------------------------------- */
 .question-block {
     margin-bottom: 20px;
 }
@@ -393,9 +354,6 @@ footer {
     margin: 5px 0;
 }
 
-/* -------------------------------------------------------------
-   МОДАЛЬНІ ВІКНА (реєстрація, профіль, ...)
-------------------------------------------------------------- */
 .modal {
     display: none;
     position: fixed;
@@ -431,7 +389,6 @@ footer {
     cursor: pointer;
 }
 
-/* Форми в модалках */
 .modal-content form {
     display: flex;
     flex-direction: column;
@@ -453,7 +410,6 @@ footer {
     align-self: center;
 }
 
-/* Модалка профілю */
 #profile-modal .modal-content {
     padding: 20px;
     border-radius: 10px;
@@ -483,7 +439,6 @@ footer {
     margin-top: 10px;
 }
 
-/* name-field (режим вхід/реєстрація) */
 #name-field {
     display: block;
 }
@@ -492,7 +447,6 @@ footer {
     display: none;
 }
 
-/* Фото в профілі */
 #uploadPicture {
     display: block;
     margin-bottom: 10px;
@@ -508,26 +462,20 @@ footer {
     display: block;
 }
 
-/* Контейнер форми для Snippets */
 .snippet-form {
     max-width: 500px;
-    /* обмежимо ширину */
     margin: 30px auto;
-    /* центр по горизонталі, з відступом зверху/знизу */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
-    /* світлий фон */
 }
 
-/* Заголовок всередині форми */
 .snippet-form-title {
     text-align: center;
     margin-bottom: 15px;
 }
 
-/* Усі label робимо блоковими, з відступами */
 .snippet-form label {
     display: block;
     margin-top: 10px;
@@ -535,7 +483,6 @@ footer {
     font-weight: 600;
 }
 
-/* Поля в одному стовпці, на всю ширину */
 .snippet-form input[type="text"],
 .snippet-form select,
 .snippet-form textarea {
@@ -547,15 +494,12 @@ footer {
     border-radius: 4px;
     font-size: 14px;
     font-family: inherit;
-    /* наслідувати шрифт */
 }
 
 .snippets-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 колонки на ширину */
     gap: 20px;
-    /* відступ між картками */
     margin-top: 20px;
 }
 
@@ -571,10 +515,8 @@ footer {
 
 .snippet-card h4 {
     margin-top: 0;
-    /* прибираємо зайвий відступ */
 }
 
-/* Контейнер для лайка */
 .snippet-like-container {
     position: absolute;
     bottom: 10px;
@@ -587,7 +529,6 @@ footer {
 .snippet-like-count {
     font-size: 16px;
     margin-right: 5px;
-    /* відступ перед іконкою */
 }
 
 .snippet-like-icon {
@@ -621,9 +562,6 @@ textarea.form-input {
     font-family: inherit;
 }
 
-/* -------------------------------------------------------------
-   АДАПТИВНІСТЬ (MEDIA QUERIES)
-------------------------------------------------------------- */
 @media (min-width: 1121px) {
 
     .desktop-menu {

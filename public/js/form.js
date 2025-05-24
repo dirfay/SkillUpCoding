@@ -1,6 +1,3 @@
-// form.js
-
-// --- Кнопка "Повернутися нагору" ---
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 window.onscroll = () => {
@@ -11,7 +8,6 @@ scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// --- Плавний скролінг за anchor-посиланнями (окрім href="#") ---
 document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     e.preventDefault();
@@ -24,22 +20,17 @@ document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((anchor) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ===================== ПІДСВІЧУВАННЯ ПОТОЧНОЇ СТОРІНКИ =====================
-  // Припустимо, що у нас є десктоп-меню .desktop-menu і оф-канвас .offcanvas-menu
   const currentPage = window.location.pathname.split("/").pop();
-  // Знаходимо ВСІ посилання у двох меню:
   const allMenuLinks = document.querySelectorAll(
     ".desktop-menu a, .offcanvas-menu a"
   );
   allMenuLinks.forEach((link) => {
     link.classList.remove("active");
-    // Якщо href дорівнює поточній назві файлу, робимо .active
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
 
-  // Кнопка "Вперед до вивчення!"
   const goToLanguagesBtn = document.getElementById("go-to-languages-btn");
   if (goToLanguagesBtn) {
     goToLanguagesBtn.addEventListener("click", () => {
@@ -50,29 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===================== АВТОРИЗАЦІЯ (Sign In / Sign Up) =====================
-  // Якщо у вас однакові ID для кнопок і десктоп, і мобільний, зробіть окремі
-  // або керуйте одночасно (див. пояснення)
-
-  // Припустимо, що ви тримаєте ТІЛЬКИ ОДИН набір кнопок (десктоп),
-  // а в оф-канвасі інші (з суфіксами -m). Тоді можна додати логіку для обох:
-  
-  // ДЕСКТОП
   const signInButton = document.getElementById("sign-in-button");
   const signUpButton = document.getElementById("sign-up-button");
   const profileButton = document.getElementById("profile-button");
 
-  // МОБІЛЬНИЙ
   const signInButtonM = document.getElementById("sign-in-button-m");
   const signUpButtonM = document.getElementById("sign-up-button-m");
   const profileButtonM = document.getElementById("profile-button-m");
 
-  // Функція оновлення кнопок (SignIn, SignUp, Профіль)
   const updateAuthButtons = () => {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-    // Якщо Користувач залогінений: Ховаємо SignIn/Up, показуємо Profile
-    // на обох меню (десктоп/мобільне)
     if (isLoggedIn) {
       if (signInButton) signInButton.style.display = "none";
       if (signUpButton) signUpButton.style.display = "none";
@@ -82,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (signUpButtonM) signUpButtonM.style.display = "none";
       if (profileButtonM) profileButtonM.style.display = "block";
     } else {
-      // Інакше: показуємо SignIn/Up, ховаємо Profile
       if (signInButton) signInButton.style.display = "block";
       if (signUpButton) signUpButton.style.display = "block";
       if (profileButton) profileButton.style.display = "none";
@@ -94,11 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   updateAuthButtons();
 
-  // =================== Логіка відкриття модалки реєстрації ===================
-  // Змінна, що вказує на поточний режим форми: Вхід (true) чи Реєстрація (false)
   let isLoginMode = false;
 
-  // Обробники натискань на Sign In та Sign Up (ДЕСКТОПНІ кнопки)
   if (signInButton) {
     signInButton.onclick = (e) => {
       e.preventDefault();
@@ -114,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  // Обробники натискань на Sign In / Sign Up (МОБІЛЬНІ) - якщо є
   if (signInButtonM) {
     signInButtonM.onclick = (e) => {
       e.preventDefault();
@@ -130,31 +104,26 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  // Модальне вікно реєстрації/входу
   const regModal = document.getElementById("registration-modal");
   const authModalTitle = document.getElementById("auth-modal-title");
   const switchToLogin = document.getElementById("switch-to-login");
   const regForm = document.getElementById("registration-form");
   const closeRegModalBtn = document.getElementById("close-registration-modal");
 
-  // Функція відкриття модалки
   const openRegistrationModal = () => {
     if (!regModal) return;
     regModal.style.display = "block";
     toggleAuthMode();
   };
 
-  // Закрити модалку
   if (closeRegModalBtn) {
     closeRegModalBtn.onclick = () => {
       regModal.style.display = "none";
     };
   }
 
-  // Перемикання між режимами Вхід/Реєстрація
   const toggleAuthMode = () => {
     if (isLoginMode) {
-      // Вхід
       authModalTitle.textContent = "Вхід";
       regForm.querySelector("button").textContent = "Увійти";
       switchToLogin.innerHTML =
@@ -162,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("name-field").style.display = "none";
       document.getElementById("name").removeAttribute("required");
     } else {
-      // Реєстрація
       authModalTitle.textContent = "Реєстрація";
       regForm.querySelector("button").textContent = "Зареєструватися";
       switchToLogin.innerHTML =
@@ -172,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Обробка сабміту форми (Вхід/Реєстрація)
   regForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = document.getElementById("name").value.trim();
@@ -181,8 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isLoginMode) {
 
-// ======= Вхід ========
-fetch("http://localhost:3000/login", {
+fetch("https://skillupcoding.onrender.com/login", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ email, password }),
@@ -199,7 +165,6 @@ fetch("http://localhost:3000/login", {
       updateAuthButtons();
       regModal.style.display = "none";
 
-      // Ось додано:
       window.location.reload();
 
     } else {
@@ -208,8 +173,7 @@ fetch("http://localhost:3000/login", {
   })
   .catch((err) => console.error("Помилка входу:", err));
     } else {
-      // ======= Реєстрація (з поверненням token) ========
-fetch("http://localhost:3000/register", {
+fetch("https://skillupcoding.onrender.com/register", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ name, email, password }),
@@ -217,7 +181,6 @@ fetch("http://localhost:3000/register", {
   .then((res) => res.json())
   .then((data) => {
     if (data.userId && data.token) {
-      // Зберігаємо token і позначаємо, що залогінені
       localStorage.setItem("userId", data.userId);
       localStorage.setItem("userName", data.name);
       localStorage.setItem("userEmail", data.email);
@@ -229,7 +192,6 @@ fetch("http://localhost:3000/register", {
 
       alert("Реєстрація успішна! Ви вже авторизовані.");
       
-      // Додано: Перезавантажуємо сторінку
       window.location.reload();
     } else if (data.error) {
       alert("Помилка реєстрації: " + data.error);
@@ -241,7 +203,6 @@ fetch("http://localhost:3000/register", {
     }
   });
 
-  // Перемикання між "Вже маєте аккаунт?" / "Не маєте аккаунта?"
   document.body.addEventListener("click", (e) => {
     if (e.target && e.target.id === "to-login-link") {
       e.preventDefault();
@@ -250,7 +211,6 @@ fetch("http://localhost:3000/register", {
     }
   });
 
-  // ===================== МОДАЛКА ПРОФІЛЬ =====================
   const profileModal = document.getElementById("profile-modal");
   const closeProfileModalBtn = document.getElementById("close-profile-modal");
   const logoutButton = document.getElementById("logout-button");
@@ -261,7 +221,6 @@ fetch("http://localhost:3000/register", {
       openProfileModal();
     };
   }
-  // Якщо є мобільна кнопка Профіль (profileButtonM) - теж підключити
   if (profileButtonM) {
     profileButtonM.onclick = (e) => {
       e.preventDefault();
@@ -273,8 +232,7 @@ fetch("http://localhost:3000/register", {
     if (!profileModal) return;
     profileModal.style.display = "block";
 
-    // 1. Отримуємо дані користувача
-    fetch("http://localhost:3000/user-info", {
+    fetch("https://skillupcoding.onrender.com/user-info", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("authToken"),
       },
@@ -291,14 +249,12 @@ fetch("http://localhost:3000/register", {
           document.getElementById("user-email").textContent =
             data.email || "Невідомо";
 
-          // Фото
           if (data.profilePhoto) {
             document.getElementById("profile-photo").src = data.profilePhoto;
           } else {
             document.getElementById("profile-photo").src = "";
           }
 
-          // AboutMe
           if (data.aboutMe) {
             document.getElementById("aboutMe").value = data.aboutMe;
           } else {
@@ -308,10 +264,9 @@ fetch("http://localhost:3000/register", {
       })
       .catch((err) => console.error("Помилка завантаження user-info:", err));
 
-    // 2. Завантажуємо результати тестів
     const userId = localStorage.getItem("userId");
     if (userId) {
-      fetch(`http://localhost:3000/user-results/${userId}`, {
+      fetch(`https://skillupcoding.onrender.com/user-results/${userId}`, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("authToken"),
         },
@@ -328,7 +283,7 @@ fetch("http://localhost:3000/register", {
             });
           } else {
             console.error(
-              "Отримані дані не є масивом або є помилка:",
+              "Отримані дані не є масивом або є помилкою:",
               data
             );
           }
@@ -339,14 +294,12 @@ fetch("http://localhost:3000/register", {
     }
   };
 
-  // Закриття модалки профілю
   if (closeProfileModalBtn) {
     closeProfileModalBtn.onclick = () => {
       profileModal.style.display = "none";
     };
   }
 
-  // Кнопка "Вийти"
   if (logoutButton) {
     logoutButton.onclick = () => {
       logout();
@@ -354,7 +307,6 @@ fetch("http://localhost:3000/register", {
     };
   }
 
- // Функція logout
 const logout = () => {
   localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("userId");
@@ -365,7 +317,6 @@ const logout = () => {
   window.location.reload();
 };
 
-  // Обробка форми профілю (update-profile)
   const profileForm = document.getElementById("profile-form");
   if (profileForm) {
     profileForm.addEventListener("submit", (e) => {
@@ -384,7 +335,7 @@ const logout = () => {
         formData.append("profilePhoto", photoFile);
       }
 
-      fetch("http://localhost:3000/update-profile", {
+      fetch("https://skillupcoding.onrender.com/update-profile", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("authToken"),
@@ -406,7 +357,6 @@ const logout = () => {
     });
   }
 
-  // Закриття модальних вікон при кліку поза ними
   window.onclick = function (event) {
     if (event.target === regModal) {
       regModal.style.display = "none";
@@ -416,7 +366,6 @@ const logout = () => {
     }
   };
 
-  // ===================== ТЕСТИ =====================
   let testsData = {};
 
   fetch("data/tests.json")
@@ -452,7 +401,6 @@ const logout = () => {
       }
     });
 
-    // Закриваємо модальне вікно тесту при натисканні поза ним
     window.onclick = (event) => {
       if (
         event.target.classList &&
@@ -569,7 +517,6 @@ const logout = () => {
       <p>Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань.</p>`;
     resultEl.style.display = "block";
 
-    // Приховуємо питання
     const questionsCtn = document.getElementById(`test-questions-${testName}`);
     if (questionsCtn) questionsCtn.style.display = "none";
     const submitBtn = document.getElementById(`submit-test-${testName}`);
@@ -577,7 +524,6 @@ const logout = () => {
     const retryBtn = document.getElementById(`retry-test-${testName}`);
     if (retryBtn) retryBtn.style.display = "block";
 
-    // Якщо залогінений, зберігаємо результат
     const userId = localStorage.getItem("userId");
     if (!userId) {
       console.log("Користувач не авторизований, результат не збережено.");
@@ -589,7 +535,7 @@ const logout = () => {
     let timeBonus = Math.max(0, 100 - timeTaken);
     let totalScore = baseScore + timeBonus;
 
-    fetch("http://localhost:3000/submit-result", {
+    fetch("https://skillupcoding.onrender.com/submit-result", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -618,13 +564,8 @@ const logout = () => {
   };
 });
 
-// --------------------- SNIPPETS - ФУНКЦІЇ ---------------------
-
-////////////////////////////////////////
-// 1. Завантаження списку snippet-ів (з параметром сортування)
-////////////////////////////////////////
 function loadSnippets(sortValue = "dateDesc") {
-  let url = "http://localhost:3000/snippets";
+  let url = "https://skillupcoding.onrender.com/snippets";
 
   if (sortValue === "likesDesc") {
     url += "?sort=likesDesc";
@@ -643,7 +584,6 @@ function loadSnippets(sortValue = "dateDesc") {
     })
     .catch((err) => console.error("Помилка завантаження snippets:", err));
   
-  // Закрити модалку по X
   const closeSnippetModalBtn = document.getElementById("close-snippet-modal");
   if (closeSnippetModalBtn) {
     closeSnippetModalBtn.onclick = () => {
@@ -652,22 +592,17 @@ function loadSnippets(sortValue = "dateDesc") {
     };
   }
 
-  // Кнопка "Додати" коментар у модалці
   const addCommentBtn = document.getElementById("modal-addCommentBtn");
   if (addCommentBtn) {
     addCommentBtn.onclick = () => {
       const text = document.getElementById("modal-commentText").value.trim();
       if (!text) return;
-      addComment(currentSnippetId, text); // parentId = null
-      // Очищаємо поле
+      addComment(currentSnippetId, text); 
       document.getElementById("modal-commentText").value = "";
     };
   }
 }
 
-////////////////////////////////////////
-// 2. Відмалювати snippet-и у #snippetsList
-////////////////////////////////////////
 function renderSnippets(snippets) {
   const container = document.getElementById("snippetsList");
   if (!container) return;
@@ -679,13 +614,9 @@ function renderSnippets(snippets) {
     const div = document.createElement("div");
     div.classList.add("snippet-card");
 
-    // Inline-стилі за бажанням
     div.style.margin = "10px 0";
     div.style.padding = "10px";
 
-    // Додаємо class="language-..." залежно від snippet.language
-    // Наприклад, якщо snippet.language = "JS", робимо "language-js"
-    // Якщо "Python" &rarr; "language-python", тощо.
     const langClass = snippet.language
       ? `language-${snippet.language.toLowerCase()}`
       : "language-plaintext";
@@ -696,7 +627,6 @@ function renderSnippets(snippets) {
       <pre><code class="${langClass}">${snippet.codeText}</code></pre>
     `;
 
-    // Блок лайків
     const likeContainer = document.createElement("div");
     likeContainer.classList.add("snippet-like-container");
     likeContainer.onclick = () => likeSnippet(snippet.id);
@@ -713,7 +643,6 @@ function renderSnippets(snippets) {
     likeContainer.appendChild(likeIcon);
     div.appendChild(likeContainer);
 
-    // Edit/Delete, якщо userId збігається
     if (parseInt(snippet.userId) === parseInt(currentUserId)) {
       const editBtn = document.createElement("button");
       editBtn.textContent = "Edit";
@@ -730,54 +659,39 @@ function renderSnippets(snippets) {
       div.appendChild(delBtn);
     }
 
-    // Створимо кнопку
     const viewCommentBtn = document.createElement("button");
     viewCommentBtn.textContent = "Переглянути / Коментувати";
     viewCommentBtn.classList.add("nav-btn");
     viewCommentBtn.style.margin = "8px";
 
-    // При натисканні &rarr; openSnippetModal(snippet)
     viewCommentBtn.onclick = () => openSnippetModal(snippet);
 
-    // Додаємо кнопку до div
     div.appendChild(viewCommentBtn);
 
     container.appendChild(div);
   });
 
-  // Ось тут викликаємо highlightAll(),
-  // коли всі <pre><code> уже в DOM:
   hljs.highlightAll();
 }
 
 let currentSnippetId = null;
 
 function openSnippetModal(snippet) {
-  currentSnippetId = snippet.id; // збереже ID snippet'a
+  currentSnippetId = snippet.id; 
 
   const modal = document.getElementById("snippet-modal");
   if (!modal) return;
 
-  // Заповнюємо поля
   document.getElementById("modal-snippet-title").textContent = snippet.title;
   document.getElementById("modal-snippet-author").textContent = snippet.userName || "Невідомо";
   const codeEl = document.getElementById("modal-snippet-code");
   codeEl.textContent = snippet.codeText;
 
-  // Якщо хочете підсвітити конкретною мовою:
-  // codeEl.className = "language-" + (snippet.language || "plaintext").toLowerCase();
-  // hljs.highlightElement(codeEl);
-
-  // Показати модальне вікно
   modal.style.display = "block";
 
-  // Завантажити коментарі
   loadComments(snippet.id);
 }
 
-////////////////////////////////////////
-// 3. Створити snippet
-////////////////////////////////////////
 function createSnippet() {
   const token = localStorage.getItem("authToken");
   if (!token) {
@@ -803,7 +717,7 @@ function createSnippet() {
     return;
   }
 
-  fetch("http://localhost:3000/snippets", {
+  fetch("https://skillupcoding.onrender.com/snippets", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -826,9 +740,6 @@ function createSnippet() {
     .catch((err) => console.error("Помилка createSnippet:", err));
 }
 
-////////////////////////////////////////
-// 4. Видалити snippet
-////////////////////////////////////////
 function deleteSnippet(snippetId) {
   const token = localStorage.getItem("authToken");
   if (!token) {
@@ -837,7 +748,7 @@ function deleteSnippet(snippetId) {
   }
   if (!confirm("Видалити snippet?")) return;
 
-  fetch(`http://localhost:3000/snippets/${snippetId}`, {
+  fetch(`https://skillupcoding.onrender.com/snippets/${snippetId}`, {
     method: "DELETE",
     headers: {
       Authorization: "Bearer " + token,
@@ -855,9 +766,6 @@ function deleteSnippet(snippetId) {
     .catch((err) => console.error("Помилка deleteSnippet:", err));
 }
 
-////////////////////////////////////////
-// 5. Редагувати snippet
-////////////////////////////////////////
 function editSnippet(snippet) {
   const token = localStorage.getItem("authToken");
   if (!token) {
@@ -871,7 +779,7 @@ function editSnippet(snippet) {
   const newCode = prompt("Новий codeText:", snippet.codeText);
   if (newCode === null) return;
 
-  fetch(`http://localhost:3000/snippets/${snippet.id}`, {
+  fetch(`https://skillupcoding.onrender.com/snippets/${snippet.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -895,25 +803,19 @@ function editSnippet(snippet) {
     .catch((err) => console.error("Помилка editSnippet:", err));
 }
 
-////////////////////////////////////////
-// 6. Лайк snippet (POST /snippets/:id/like)
-////////////////////////////////////////
 function likeSnippet(snippetId) {
-  // Перевіряємо, чи є токен (чи авторизований користувач)
   const token = localStorage.getItem("authToken");
   if (!token) {
     alert("Будь ласка, увійдіть, щоб лайкати Snippet.");
     return;
   }
 
-  // Перевіряємо, чи взагалі передали snippetId
   if (!snippetId) {
     console.error("Немає ID snippet'а для лайку!");
     return;
   }
 
-  // Виконуємо POST-запит на маршрут /snippets/:id/like
-  fetch(`http://localhost:3000/snippets/${snippetId}/like`, {
+  fetch(`https://skillupcoding.onrender.com/snippets/${snippetId}/like`, {
     method: "POST",
     headers: {
       Authorization: "Bearer " + token,
@@ -921,12 +823,9 @@ function likeSnippet(snippetId) {
   })
     .then((res) => res.json())
     .then((data) => {
-      // Перевіряємо, чи запит пройшов успішно
       if (data.success) {
-        // Оновлюємо список snippet-ів, щоб відобразити нову кількість likes
         loadSnippets();
       } else {
-        // Якщо є помилка від сервера (наприклад, snippet не знайдено)
         alert("Помилка лайку: " + (data.error || "Невідома"));
       }
     })
@@ -936,17 +835,10 @@ function likeSnippet(snippetId) {
     });
 }
 
-////////////////////////////////////////
-// Коментарі
-////////////////////////////////////////
-
-////////////////////////////////////////
-// Функція "скільки часу тому"
-////////////////////////////////////////
 function timeAgo(isoDateString) {
   const date = new Date(isoDateString);
   const now = new Date();
-  let diffInSeconds = (now - date) / 1000; // різниця в секундах
+  let diffInSeconds = (now - date) / 1000; 
 
   if (diffInSeconds < 60) {
     return "менше хвилини тому";
@@ -976,11 +868,8 @@ function timeAgo(isoDateString) {
   return years + " р. тому";
 }
 
-////////////////////////////////////////
-// Завантажити і відобразити коментарі
-////////////////////////////////////////
 function loadComments(snippetId) {
-  fetch(`http://localhost:3000/snippets/${snippetId}/comments`)
+  fetch(`https://skillupcoding.onrender.com/snippets/${snippetId}/comments`)
     .then(res => res.json())
     .then(data => {
       renderComments(data, snippetId);
@@ -996,10 +885,8 @@ function renderComments(comments, snippetId) {
   comments.forEach(comment => {
     const div = document.createElement("div");
 
-    // Якщо comment.parentId != null => це відповідь (зсув)
     div.style.marginLeft = comment.parentId ? "30px" : "0";
 
-    // Використовуємо нашу timeAgo, щоб вивести "5 хв. тому" замість повної дати
     const dateStr = timeAgo(comment.dateCreated);
 
     div.innerHTML = `
@@ -1010,11 +897,9 @@ function renderComments(comments, snippetId) {
       <p>${comment.commentText}</p>
     `;
 
-    // Кнопка "Відповісти"
     const replyBtn = document.createElement("button");
     replyBtn.classList.add("nav-btn");
     replyBtn.textContent = "Відповісти";
-    // Відступ між кнопками
     replyBtn.style.marginRight = "5px";
 
     replyBtn.onclick = () => {
@@ -1025,10 +910,8 @@ function renderComments(comments, snippetId) {
     };
     div.appendChild(replyBtn);
 
-    // Якщо автор => "Редагувати" / "Видалити"
     const currentUserId = localStorage.getItem("userId") || "";
     if (parseInt(comment.userId) === parseInt(currentUserId)) {
-      // Редагувати
       const editBtn = document.createElement("button");
       editBtn.classList.add("nav-btn");
       editBtn.textContent = "Редагувати";
@@ -1041,7 +924,6 @@ function renderComments(comments, snippetId) {
       };
       div.appendChild(editBtn);
 
-      // Видалити
       const delBtn = document.createElement("button");
       delBtn.classList.add("nav-btn");
       delBtn.textContent = "Видалити";
@@ -1064,7 +946,7 @@ function addComment(snippetId, commentText, parentId = null) {
     alert("Спершу увійдіть!");
     return;
   }
-  fetch(`http://localhost:3000/snippets/${snippetId}/comments`, {
+  fetch(`https://skillupcoding.onrender.com/snippets/${snippetId}/comments`, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json",
@@ -1075,7 +957,6 @@ function addComment(snippetId, commentText, parentId = null) {
     .then(res => res.json())
     .then(data => {
       if (data.success) {
-        // знову завантажуємо коментарі, щоби побачити новий
         loadComments(snippetId);
       } else {
         alert("Помилка додавання коментаря: " + (data.error || ''));
@@ -1090,7 +971,7 @@ function editComment(commentId, newText, snippetId) {
     alert("Спершу увійдіть!");
     return;
   }
-  fetch(`http://localhost:3000/comments/${commentId}`, {
+  fetch(`https://skillupcoding.onrender.com/comments/${commentId}`, {
     method: 'PUT',
     headers: {
       "Content-Type": "application/json",
@@ -1115,7 +996,7 @@ function deleteComment(commentId, snippetId) {
     alert("Спершу увійдіть!");
     return;
   }
-  fetch(`http://localhost:3000/comments/${commentId}`, {
+  fetch(`https://skillupcoding.onrender.com/comments/${commentId}`, {
     method: 'DELETE',
     headers: {
       Authorization: "Bearer " + token
@@ -1124,7 +1005,7 @@ function deleteComment(commentId, snippetId) {
     .then(res => res.json())
     .then(data => {
       if (data.success) {
-        loadComments(snippetId); // оновити список коментарів
+        loadComments(snippetId); 
       } else {
         alert("Помилка видалення коментаря: " + (data.error || ''));
       }
@@ -1132,35 +1013,24 @@ function deleteComment(commentId, snippetId) {
     .catch(err => console.error("Помилка deleteComment:", err));
 }
 
-////////////////////////////////////////
-// Коли DOM готовий — викликаємо loadSnippets()
-////////////////////////////////////////
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Шукаємо контейнер для snippet-ів
   const snippetListEl = document.getElementById("snippetsList");
   if (snippetListEl) {
-    // За замовчуванням завантажимо snippets з сортуванням "dateDesc" (останні додані)
     loadSnippets("dateDesc");
 
-    // Кнопка "Створити Snippet" (якщо існує)
     const createBtn = document.getElementById("createSnippetBtn");
     if (createBtn) {
       createBtn.addEventListener("click", createSnippet);
     }
 
-    // Блок із селектом сортування
     const sortSelect = document.getElementById("sortSnippets");
     const sortApplyBtn = document.getElementById("sortSnippetsApply");
 
     if (sortApplyBtn && sortSelect) {
       sortApplyBtn.addEventListener("click", () => {
-        // Зчитуємо обране значення з <select>
         const sortValue = sortSelect.value; 
-        // Викликаємо loadSnippets(sortValue), яке підставить ?sort=... до URL
         loadSnippets(sortValue);
       });
     }
   }
 });
-

@@ -661,6 +661,7 @@ textarea.form-input {
     .main-page-text-container {
         padding: 20px 10px;
         margin: 0;
+        max-width: 500px;
         width: 100%;
         border-radius: 20px;
     }
@@ -690,5 +691,15 @@ textarea.form-input {
         width: 100%;
         padding: 12px;
         font-size: 14px;   
+    }
+}
+
+@media (max-width: 500px) {
+    .main-page-text-container {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 15px;
+        box-sizing: border-box;
     }
 }

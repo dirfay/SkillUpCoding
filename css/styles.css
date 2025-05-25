@@ -638,14 +638,57 @@ textarea.form-input {
 
 @media (max-width: 600px) {
     .main-page-title {
-        font-size: 28px;
-    }
-
-    .main-page-subtitle {
         font-size: 24px;
+        text-align: center;
     }
-
-    .main-page-subsubtitle {
+    
+    .main-page-subtitle {
         font-size: 20px;
+        text-align: center;
+    }
+    
+    .main-page-subsubtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .main-page-descr {
+        font-size: 14px;
+        padding: 0 10px;
+        text-align: justify;
+    }
+    
+    .main-page-text-container {
+        padding: 20px 10px;
+        margin: 0;
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    .section-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .image-container {
+        max-width: 100%;
+        margin: 0 auto 20px auto;
+    }
+    
+    .text-content,
+    .text-content-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .code-block {
+        overflow-x: auto;
+        font-size: 12px;
+    }
+    
+    .main-page-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;   
     }
 }
